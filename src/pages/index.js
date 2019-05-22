@@ -3,22 +3,22 @@ import { Layout, GuideCards } from '../components'
 
 const guides = [
     {
-        title: 'API',
+        title: 'DHIS2 API',
         summary: 'Learn to use the DHIS2 API.',
         path: '/api',
     },
     {
-        title: 'DHIS2 UI',
-        summary: 'Learn to the use DHIS2 UI library.',
+        title: 'DHIS2 UI libraries',
+        summary: 'Learn to use the DHIS2 UI libraries.',
         path: '/ui',
     },
     {
-        title: 'Apps',
+        title: 'DHIS2 apps',
         summary: 'Learn to create DHIS2 apps.',
         path: '/apps',
     },
     {
-        title: 'Widgets',
+        title: 'DHIS2 widgets',
         summary: 'Learn to create DHIS2 widgets.',
         path: '/widgets',
     },
