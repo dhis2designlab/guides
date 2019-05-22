@@ -1,0 +1,44 @@
+{
+    "name": "guides",
+    "private": true,
+    "description": "Source for https://dhis2designlab.github.io",
+    "version": "0.1.0",
+    "license": "MIT",
+    "scripts": {
+        "build": "gatsby build",
+        "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
+        "format": "d2-style js apply",
+        "start": "gatsby develop",
+        "serve": "gatsby serve",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    },
+    "dependencies": {
+        "@dhis2/ui-core": "^2.2.1",
+        "gatsby": "^2.5.7",
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "styled-components": "^4.2.0",
+        "typeface-roboto": "^0.0.54"
+    },
+    "devDependencies": {
+        "@dhis2/cli-style": "^3.2.2",
+        "babel-plugin-styled-components": "^1.10.0",
+        "gatsby-plugin-styled-components": "^3.0.7",
+        "gh-pages": "^2.0.1",
+        "husky": "^2.3.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dhis2designlab/guides.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dhis2designlab/guides/issues"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "d2-style commit check",
+            "pre-commit": "d2-style js apply"
+        }
+    }
+}

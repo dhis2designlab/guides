@@ -1,0 +1,32 @@
+import styled from 'styled-components'
+import { Card } from '@dhis2/ui-core'
+
+export const Spacer = styled.div`
+    margin: 16px;
+`
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-content: space-between;
+    padding: 8px;
+`
+
+export const StyledCard = styled(Card)`
+    height: 200px !important;
+    width: 360px !important;
+    padding: 16px;
+    text-align: center;
+    &:hover {
+        box-shadow: rgba(64, 75, 90, 0.3) 0px 0px 1px 0px,
+            rgba(64, 75, 90, 0.3) 0px 14px 28px -6px;
+        cursor: pointer;
+    }
+`
+
+export const Summary = styled.p`
+    padding-top: 24px;
+    color: #0d0d0e;
+`
