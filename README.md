@@ -2,7 +2,6 @@
 
 This is the source code for [dhis2designlab.github.io](https://dhis2designlab.github.io/)
 
-
 ### Installation
 ```
 cd [root_dir]
@@ -23,3 +22,6 @@ yarn deploy
 ```
 This will push to [dhis2designlab.github.io repo](https://github.com/dhis2designlab/dhis2designlab.github.io),
 making the website available at [dhis2designlab.github.io](https://dhis2designlab.github.io/).
+
+### Adding a new page
+Create a new .md file in [the pages folder](pages), then deploy.

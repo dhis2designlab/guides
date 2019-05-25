@@ -1,31 +1,37 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { Layout, GuideCards } from '../components'
 
-const guides = [
-    {
-        title: 'DHIS2 API',
-        summary: 'Learn to use the DHIS2 API.',
-        path: '/api',
-    },
-    {
-        title: 'DHIS2 UI libraries',
-        summary: 'Learn to use the DHIS2 UI libraries.',
-        path: '/ui',
-    },
-    {
-        title: 'DHIS2 apps',
-        summary: 'Learn to create DHIS2 apps.',
-        path: '/apps',
-    },
-    {
-        title: 'DHIS2 widgets',
-        summary: 'Learn to create DHIS2 widgets.',
-        path: '/widgets',
-    },
-]
+const IndexPage = ({ data }) => {
+    const guides = data.allMarkdownRemark.edges.map(({ node }) => ({
+        path: node.fields.slug,
+        title: node.frontmatter.title,
+        description: node.frontmatter.description,
+    }))
 
-export default () => (
-    <Layout>
-        <GuideCards guides={guides} />
-    </Layout>
-)
+    return (
+        <Layout>
+            <GuideCards guides={guides} />
+        </Layout>
+    )
+}
+
+export default IndexPage
+
+export const listQuery = graphql`
+    query ListQuery {
+        allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___index] }) {
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                        description
+                    }
+                }
+            }
+        }
+    }
+`

@@ -8,13 +8,17 @@
         "build": "gatsby build",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
-        "start": "gatsby develop",
-        "serve": "gatsby serve",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+        "start": "gatsby develop"
     },
     "dependencies": {
-        "@dhis2/ui-core": "^2.2.1",
+        "@dhis2/ui-core": "^2.4.3",
+        "babel-plugin-styled-components": "^1.10.0",
         "gatsby": "^2.5.7",
+        "gatsby-plugin-styled-components": "^3.0.7",
+        "gatsby-plugin-styled-jsx": "^3.0.5",
+        "gatsby-remark-vscode": "^1.0.4",
+        "gatsby-source-filesystem": "^2.0.37",
+        "gatsby-transformer-remark": "^2.3.12",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
@@ -23,8 +27,6 @@
     },
     "devDependencies": {
         "@dhis2/cli-style": "^3.2.2",
-        "babel-plugin-styled-components": "^1.10.0",
-        "gatsby-plugin-styled-components": "^3.0.7",
         "gh-pages": "^2.0.1",
         "husky": "^2.3.0"
     },

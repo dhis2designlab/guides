@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Heading } from '../../styles'
-import { Spacer, Container, StyledCard, Summary } from './style'
+import { Spacer, Container, StyledCard, Summary, Heading } from './style'
 
-const GuideCard = ({ title, summary, path }) => (
+const GuideCard = ({ title, description, path }) => (
     <Spacer>
         <Link to={path}>
             <StyledCard>
                 <Heading>{title}</Heading>
-                <Summary>{summary}</Summary>
+                <Summary>{description}</Summary>
             </StyledCard>
         </Link>
     </Spacer>
@@ -18,9 +17,9 @@ export const GuideCards = ({ guides }) => (
     <Container>
         {guides.map(g => (
             <GuideCard
-                key={g.title}
+                key={g.path}
                 title={g.title}
-                summary={g.summary}
+                description={g.description}
                 path={g.path}
             />
         ))}

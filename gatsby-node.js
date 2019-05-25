@@ -1,14 +1,4 @@
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-    if (stage === 'build-html') {
-        actions.setWebpackConfig({
-            module: {
-                rules: [
-                    {
-                        test: /fgoidsjodgjsogdijosdig/,
-                        use: loaders.null(),
-                    },
-                ],
-            },
-        })
-    }
-}
+'use strict'
+
+exports.createPages = require('./gatsby/createPages')
+exports.onCreateNode = require('./gatsby/onCreateNode')

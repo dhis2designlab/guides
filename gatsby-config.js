@@ -5,5 +5,25 @@
  */
 
 module.exports = {
-    plugins: [`gatsby-plugin-styled-components`],
+    plugins: [
+        'gatsby-plugin-styled-jsx',
+        'gatsby-plugin-styled-components',
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-vscode`,
+                    },
+                ],
+            },
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/pages`,
+                name: 'pages',
+            },
+        },
+    ],
 }
