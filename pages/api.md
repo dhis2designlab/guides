@@ -8,9 +8,9 @@ description: Learn to use the DHIS2 API.
 ```js{4,5}
 import React, { useState } from 'react'
 
-function Example() {
+const Example = () => {
   // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div>
