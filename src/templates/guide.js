@@ -19,6 +19,7 @@ const Content = styled.div`
         margin-block-end: 1.5em;
     }
     .vscode-highlight-code {
+        font-size: 14px;
         overflow: hidden;
     }
     .vscode-highlight-line-highlighted {
