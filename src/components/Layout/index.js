@@ -1,11 +1,21 @@
 import React from 'react'
-import { BodyStyle, Main, BannerTitle, BannerContainer } from './style'
+import { Helmet } from 'react-helmet'
+import { BodyStyle, Main, BannerTitle, BannerContainer, Icon } from './style'
 
 export const Layout = ({ children }) => (
     <>
+        <Helmet title="DHIS2 Design Lab">
+            <meta
+                name="description"
+                content="DHIS2 front-end development guides."
+            />
+        </Helmet>
         <BodyStyle />
         <BannerContainer>
-            <BannerTitle to="/">dhis2 design lab</BannerTitle>
+            <BannerTitle to="/">
+                <Icon />
+                <span>DHIS2 Design Lab</span>
+            </BannerTitle>
         </BannerContainer>
         <Main>{children}</Main>
     </>

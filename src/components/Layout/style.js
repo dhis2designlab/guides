@@ -1,4 +1,5 @@
 import { Link } from 'gatsby'
+import { LogoIconWhite } from '@dhis2/ui-core'
 import styled, { createGlobalStyle } from 'styled-components'
 
 export const BodyStyle = createGlobalStyle`
@@ -20,7 +21,13 @@ export const BannerContainer = styled.header`
     box-shadow: 0 0 3px 0 #222;
 `
 
+export const Icon = styled(LogoIconWhite)`
+    height: 36px;
+    margin-right: 12px;
+`
+
 export const BannerTitle = styled(Link)`
+    display: flex;
     color: white;
     font-size: 2rem;
     font-weight: 500;
@@ -30,6 +37,9 @@ export const BannerTitle = styled(Link)`
     margin-block-end: 0;
     &:hover {
         color: #afafaf;
+        path {
+            fill: #afafaf;
+        }
     }
 `
 
