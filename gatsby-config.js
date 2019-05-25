@@ -37,5 +37,7 @@ module.exports = {
                 name: 'pages',
             },
         },
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-offline',
     ],
 }
