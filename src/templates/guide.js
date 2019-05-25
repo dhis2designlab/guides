@@ -2,13 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
-import { Title } from '../styles'
 import { Layout } from '../components/Layout'
 
 const Margin = styled.div`
-    margin: 16px;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin: 16px 24px;
 `
 
 const Content = styled.div`
@@ -36,7 +33,7 @@ const guide = ({ data }) => {
             <Margin>
                 <Card>
                     <Content>
-                        <Title>{title}</Title>
+                        <h1>{title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: html }} />
                     </Content>
                 </Card>

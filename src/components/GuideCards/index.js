@@ -4,7 +4,7 @@ import { Spacer, Container, StyledCard, Summary, Heading } from './style'
 
 const GuideCard = ({ title, description, path }) => (
     <Spacer>
-        <Link to={path}>
+        <Link to={path} title={title}>
             <StyledCard>
                 <Heading>{title}</Heading>
                 <Summary>{description}</Summary>

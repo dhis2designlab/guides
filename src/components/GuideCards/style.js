@@ -11,7 +11,6 @@ export const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
-    /*padding: 8px;*/
 `
 
 export const StyledCard = styled(Card)`

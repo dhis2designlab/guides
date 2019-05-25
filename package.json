@@ -6,6 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
+        "clean": "rm -rf ./public/*",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
         "start": "gatsby develop"

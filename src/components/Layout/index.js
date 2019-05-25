@@ -1,6 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { BodyStyle, Main, BannerTitle, BannerContainer, Icon } from './style'
+import { Header } from './Header'
+import { Footer } from './Footer'
+import { BodyStyle, Content, Main } from './style'
 
 export const Layout = ({ children }) => (
     <>
@@ -11,12 +13,10 @@ export const Layout = ({ children }) => (
             />
         </Helmet>
         <BodyStyle />
-        <BannerContainer>
-            <BannerTitle to="/">
-                <Icon />
-                <span>DHIS2 Design Lab</span>
-            </BannerTitle>
-        </BannerContainer>
-        <Main>{children}</Main>
+        <Content>
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
+        </Content>
     </>
 )
