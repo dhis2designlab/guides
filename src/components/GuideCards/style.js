@@ -33,7 +33,7 @@ export const Heading = styled.h2`
     font-weight: 500;
 `
 
-export const Summary = styled.p`
+export const Description = styled.p`
     padding-top: 24px;
     color: black;
 `

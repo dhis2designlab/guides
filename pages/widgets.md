@@ -4,7 +4,10 @@ title: DHIS2 widgets
 description: Learn to create DHIS2 widgets.
 ---
 
+# DHIS2 widgets
+
 ## Lorem ipsum
+
 ```js{4,5}
 import React, { useState } from 'react'
 

@@ -4,7 +4,10 @@ title: DHIS2 apps
 description: Learn to create DHIS2 apps.
 ---
 
+# DHIS2 apps
+
 ## Lorem ipsum
+
 ```js{4,5}
 import React, { useState } from 'react'
 

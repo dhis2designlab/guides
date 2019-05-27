@@ -1,3 +1,3 @@
 'use strict'
 
-import 'typeface-roboto'
+require('typeface-roboto')

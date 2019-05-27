@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
-import { Layout } from '../components/Layout'
+import { Layout } from '../components'
 
 const Margin = styled.div`
     margin: 16px 24px;
@@ -25,7 +25,6 @@ const Content = styled.div`
 `
 
 const guide = ({ data }) => {
-    const { title } = data.markdownRemark.frontmatter
     const { html } = data.markdownRemark
 
     return (
@@ -48,9 +47,6 @@ export const query = graphql`
     query PostQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             html
-            frontmatter {
-                title
-            }
         }
     }
 `

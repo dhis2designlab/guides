@@ -4,7 +4,10 @@ title: DHIS2 UI libraries
 description: Learn to use the DHIS2 UI libraries.
 ---
 
+# DHIS2 UI libraries
+
 ## Lorem ipsum
+
 ```js{4,5}
 import React, { useState } from 'react'
 

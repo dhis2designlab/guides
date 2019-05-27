@@ -4,7 +4,10 @@ title: DHIS2 API
 description: Learn to use the DHIS2 API.
 ---
 
+# DHIS2 API
+
 ## Lorem ipsum
+
 ```js{4,5}
 import React, { useState } from 'react'
 
