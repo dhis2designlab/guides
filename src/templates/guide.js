@@ -31,10 +31,7 @@ const guide = ({ data }) => {
         <Layout>
             <Margin>
                 <Card>
-                    <Content>
-                        <h1>{title}</h1>
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
-                    </Content>
+                    <Content dangerouslySetInnerHTML={{ __html: html }} />
                 </Card>
             </Margin>
         </Layout>
