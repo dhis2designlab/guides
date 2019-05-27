@@ -3,6 +3,10 @@ import { Container, Nav, NavLink } from './style'
 
 const links = [
     {
+        title: 'React Docs',
+        url: 'https://reactjs.org/docs/getting-started.html',
+    },
+    {
         title: 'DHIS2 Design Lab',
         url:
             'https://www.mn.uio.no/ifi/english/research/networks/hisp/dhis2-design-lab/',

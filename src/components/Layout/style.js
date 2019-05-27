@@ -21,8 +21,9 @@ export const Content = styled.div`
 export const Main = styled.main`
     width: 100%;
     max-width: 864px;
-    padding-top: 32px;
+    padding-top: 16px;
     margin-right: auto;
     margin-left: auto;
+    padding-bottom: 16px;
     flex: 1;
 `
