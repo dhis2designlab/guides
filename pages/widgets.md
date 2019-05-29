@@ -1,5 +1,5 @@
 ---
-path: /widgets
+index: 4
 title: DHIS2 widgets
 description: Learn to create DHIS2 widgets.
 ---

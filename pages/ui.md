@@ -1,5 +1,5 @@
 ---
-index: 1
+index: 2
 title: DHIS2 UI libraries
 description: Learn to use the DHIS2 UI libraries.
 ---

@@ -1,5 +1,5 @@
 ---
-index: 2
+index: 3
 title: DHIS2 apps
 description: Learn to create DHIS2 apps.
 ---
