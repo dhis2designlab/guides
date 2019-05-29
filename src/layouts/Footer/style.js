@@ -22,7 +22,9 @@ export const NavLink = styled.a`
     cursor: pointer;
     user-select: none;
     padding: 6px 11px;
-    &:hover {
+    &:hover,
+    &:focus {
+        outline: unset;
         background-color: #3182ce;
         border-radius: 4px;
     }

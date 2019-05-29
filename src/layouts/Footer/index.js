@@ -25,7 +25,7 @@ export const Footer = () => (
     <Container>
         <Nav>
             {links.map(link => (
-                <NavLink title={link.title} href={link.url}>
+                <NavLink key={link.url} title={link.title} href={link.url}>
                     {link.title}
                 </NavLink>
             ))}

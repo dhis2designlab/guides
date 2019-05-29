@@ -1,16 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Spacer, Container, StyledCard, Description, Heading } from './style'
+import { Container, StyledLink, StyledCard, Description, Title } from './style'
 
 const GuideCard = ({ title, description, path }) => (
-    <Spacer>
-        <Link to={path} title={title}>
-            <StyledCard>
-                <Heading>{title}</Heading>
-                <Description>{description}</Description>
-            </StyledCard>
-        </Link>
-    </Spacer>
+    <StyledLink to={path} title={title}>
+        <StyledCard>
+            <Title>{title}</Title>
+            <Description>{description}</Description>
+        </StyledCard>
+    </StyledLink>
 )
 
 export const GuideCards = ({ guides }) => (

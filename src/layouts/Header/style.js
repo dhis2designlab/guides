@@ -26,7 +26,9 @@ export const Title = styled(Link)`
     text-align: center;
     margin-block-start: 0;
     margin-block-end: 0;
+    &:focus,
     &:hover {
+        outline: unset;
         color: #dadada;
         path {
             fill: #dadada;
