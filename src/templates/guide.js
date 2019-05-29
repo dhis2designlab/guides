@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
-import { Layout } from '../components'
 
 const Margin = styled.div`
     margin: 16px 24px;
@@ -28,13 +27,11 @@ const guide = ({ data }) => {
     const { html } = data.markdownRemark
 
     return (
-        <Layout>
-            <Margin>
-                <Card>
-                    <Content dangerouslySetInnerHTML={{ __html: html }} />
-                </Card>
-            </Margin>
-        </Layout>
+        <Margin>
+            <Card>
+                <Content dangerouslySetInnerHTML={{ __html: html }} />
+            </Card>
+        </Margin>
     )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
-import { Layout } from '../components'
 
 const Margin = styled.div`
     margin: 16px 24px;
@@ -17,14 +16,12 @@ const Content = styled.div`
 `
 
 export default () => (
-    <Layout>
-        <Margin>
-            <Card>
-                <Content>
-                    <h1>404</h1>
-                    <p>Page does not exist.</p>
-                </Content>
-            </Card>
-        </Margin>
-    </Layout>
+    <Margin>
+        <Card>
+            <Content>
+                <h1>404</h1>
+                <p>Page does not exist.</p>
+            </Content>
+        </Card>
+    </Margin>
 )

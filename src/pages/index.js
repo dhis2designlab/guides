@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout, GuideCards } from '../components'
+import { GuideCards } from '../components'
 
 const IndexPage = ({ data }) => {
     const guides = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -9,11 +9,7 @@ const IndexPage = ({ data }) => {
         description: node.frontmatter.description,
     }))
 
-    return (
-        <Layout>
-            <GuideCards guides={guides} />
-        </Layout>
-    )
+    return <GuideCards guides={guides} />
 }
 
 export default IndexPage

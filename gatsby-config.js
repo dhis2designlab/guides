@@ -33,6 +33,7 @@ module.exports = {
                 name: 'pages',
             },
         },
+        'gatsby-plugin-layout',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-offline',
     ],

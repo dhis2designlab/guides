@@ -4,7 +4,7 @@ import { Header } from './Header'
 import { Footer } from './Footer'
 import { BodyStyle, Content, Main } from './style'
 
-export const Layout = ({ children }) => (
+const Layout = ({ children }) => (
     <>
         <Helmet title="DHIS2 Design Lab">
             <meta
@@ -20,3 +20,5 @@ export const Layout = ({ children }) => (
         </Content>
     </>
 )
+
+export default Layout
