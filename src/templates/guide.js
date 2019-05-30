@@ -9,11 +9,26 @@ const Margin = styled.div`
 
 const Content = styled.div`
     padding: 32px;
+    a {
+        text-decoration: none;
+        color: #3172b4;
+    }
+    a:hover {
+        border-bottom: 1px solid #3172b4;
+    }
     p {
         line-height: 1.5rem;
         margin-block-start: 1.5em;
         margin-block-end: 1.5em;
+        code {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 3px;
+            margin: 0;
+            padding: 0.2em 0.4em;
+        }
     }
+
     .vscode-highlight-code {
         font-size: 14px;
         overflow: hidden;

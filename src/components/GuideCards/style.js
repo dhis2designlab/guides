@@ -14,6 +14,9 @@ export const StyledLink = styled(Link)`
     margin: 16px;
     text-align: center;
     text-decoration: none;
+    div {
+        transition: all 200ms;
+    }
     &:hover,
     &:focus {
         outline: unset;
