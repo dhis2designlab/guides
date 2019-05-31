@@ -11,6 +11,7 @@ const Layout = ({ children }) => (
                 name="description"
                 content="DHIS2 front-end development guides."
             />
+            <html lang="en" />
         </Helmet>
         <BodyStyle />
         <Content>

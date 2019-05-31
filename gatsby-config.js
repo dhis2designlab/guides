@@ -34,6 +34,7 @@ module.exports = {
             },
         },
         'gatsby-plugin-layout',
+        'gatsby-plugin-catch-links',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-offline',
     ],
