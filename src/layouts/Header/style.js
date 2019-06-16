@@ -10,6 +10,7 @@ export const Container = styled.header`
     padding: 12px 0;
     background-color: #215e8c;
     box-shadow: 0 0 3px 0 #222;
+    z-index: 1000;
 `
 
 export const Icon = styled(LogoIconWhite)`

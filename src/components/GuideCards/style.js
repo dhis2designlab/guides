@@ -29,8 +29,8 @@ export const StyledLink = styled(Link)`
 `
 
 export const StyledCard = styled(Card)`
-    height: 200px !important;
-    width: 360px !important;
+    height: 220px !important;
+    width: 400px !important;
     padding: 16px;
 `
 

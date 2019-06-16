@@ -5,8 +5,12 @@ import { Card } from '@dhis2/ui-core'
 
 const StyledCard = styled(Card)`
     margin: 20px;
-    position: unset !important;
-    width: unset !important;
+    width: calc(100% - 40px) !important;
+    @media (max-width: 844px) {
+        border-radius: unset !important;
+        margin: unset;
+        width: 100% !important;
+    }
 `
 
 const Content = styled.div`
@@ -23,6 +27,7 @@ const Content = styled.div`
         margin-block-start: 1.5em;
         margin-block-end: 1.5em;
         code {
+            font-family: monospace;
             background-color: #1e1e1e;
             color: #d4d4d4;
             border-radius: 3px;
@@ -48,10 +53,15 @@ const Content = styled.div`
     .vscode-highlight-code {
         font-size: 14px;
         line-height: 1.4;
-        overflow: hidden;
-    }
-    .vscode-highlight-line-highlighted {
-        background-color: rgba(255, 255, 255, 0.1);
+        span {
+            font-family: monospace;
+        }
+        .vscode-highlight-line {
+            padding-right: 0;
+        }
+        .vscode-highlight-line-highlighted {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
     }
 `
 
