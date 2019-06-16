@@ -8,10 +8,11 @@ export const Container = styled.nav`
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
+    padding: 8px;
 `
 
 export const StyledLink = styled(Link)`
-    margin: 16px;
+    margin: 12px;
     text-align: center;
     text-decoration: none;
     div {

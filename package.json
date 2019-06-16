@@ -9,7 +9,7 @@
         "clean": "rm -rf ./public/* ./.cache/*",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
-        "start": "gatsby develop"
+        "start": "gatsby develop -o"
     },
     "dependencies": {
         "@dhis2/ui-core": "^2.4.3",

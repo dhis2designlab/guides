@@ -3,8 +3,10 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
 
-const Margin = styled.div`
-    margin: 16px 24px;
+const StyledCard = styled(Card)`
+    margin: 24px;
+    position: unset !important;
+    width: unset !important;
 `
 
 const Content = styled.div`
@@ -17,7 +19,7 @@ const Content = styled.div`
         border-bottom: 1px solid #3172b4;
     }
     p {
-        line-height: 1.5rem;
+        line-height: 2rem;
         margin-block-start: 1.5em;
         margin-block-end: 1.5em;
         code {
@@ -28,9 +30,24 @@ const Content = styled.div`
             padding: 0.2em 0.4em;
         }
     }
-
+    h1 {
+        font-size: 3rem;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-block-start: 3rem;
+        margin-block-end: 1rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+        margin-block-start: 1.8rem;
+        margin-block-end: 1rem;
+    }
     .vscode-highlight-code {
         font-size: 14px;
+        line-height: 1.4;
         overflow: hidden;
     }
     .vscode-highlight-line-highlighted {
@@ -42,11 +59,9 @@ const guide = ({ data }) => {
     const { html } = data.markdownRemark
 
     return (
-        <Margin>
-            <Card>
-                <Content dangerouslySetInnerHTML={{ __html: html }} />
-            </Card>
-        </Margin>
+        <StyledCard>
+            <Content dangerouslySetInnerHTML={{ __html: html }} />
+        </StyledCard>
     )
 }
 
