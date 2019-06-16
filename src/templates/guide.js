@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
 
 const StyledCard = styled(Card)`
-    margin: 24px;
+    margin: 20px;
     position: unset !important;
     width: unset !important;
 `
