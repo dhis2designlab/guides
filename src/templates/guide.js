@@ -10,11 +10,16 @@ const StyledCard = styled(Card)`
         border-radius: unset !important;
         margin: unset;
         width: 100% !important;
+        .vscode-highlight {
+            margin-left: -24px;
+            margin-right: -24px;
+            border-radius: unset;
+        }
     }
 `
 
 const Content = styled.div`
-    padding: 32px;
+    padding: 24px;
     a {
         text-decoration: none;
         color: #3172b4;
