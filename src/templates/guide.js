@@ -52,7 +52,7 @@ const Content = styled.div`
     }
     h3 {
         font-size: 1.4rem;
-        margin-block-start: 1.8rem;
+        margin-block-start: 3rem;
         margin-block-end: 1rem;
     }
     .vscode-highlight-code {
