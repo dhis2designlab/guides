@@ -102,7 +102,7 @@ const element = <div />
 const element = <div></div>
 ```
 
-All tags tags must be closed. Both above variants are valid, though `div` would be invalid.
+All tags tags must be closed. Both above variants are valid, though `<div>` alone would be invalid.
 
 ### Fragment
 Components can only return a single element. If you want to return an array of elements you may be tempted to wrap them in a `<div></div>`. A better option is to use `<></>`, as you avoid polluting the DOM. `<></>` is shorthand for `<React.Fragment><React.Fragment/>`.
