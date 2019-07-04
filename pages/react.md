@@ -90,7 +90,8 @@ JS expressions inside JSX must be inside curly braces.
 
 ### Attributes
 ```js
-const element = <button onClick={someFunction}>Click me</button>
+const element =
+  <button onClick={someFunction}>Click me</button>
 ```
 
 Attributes are camel cased, thus we use `onClick` and not `onclick`. In some cases the JSX equivalent of HTML attributes differ in other ways (e.g. `className` in JSX and `class` in HTML).
@@ -105,7 +106,8 @@ All tags tags must be closed. Both above variants are valid, though `div` would 
 
 ### Fragment
 Components can only return a single element. If you want to return an array of elements you may be tempted to wrap them in a `<div></div>`. A better option is to use `<></>`, as you avoid polluting the DOM. `<></>` is shorthand for `<React.Fragment><React.Fragment/>`.
-```js
+
+```js {2,6}
 const element = (
   <>
     <p>1</p>
@@ -115,8 +117,8 @@ const element = (
 )
 ```
 
-## Components
-```js
+## Props
+```js {2,11}
 const Greeting = props => (
   <p>Hello {props.user} from {props.origin}</p>
 )
@@ -135,7 +137,11 @@ const Content = () => {
 
 The `Greeting` component now allows us to customize what is returned. By adding the two attributes, `Greeting` will receive `{ user: 'John', origin: 'Norway' }` in the `props` object. Let's greet some more poeple.
 
-```js
+```js {16}
+const Greeting = props => (
+  <p>Hello {props.user} from {props.origin}</p>
+)
+
 const Content = () => {
   const persons = [
     { name: 'John', country: 'Norway' },
@@ -146,14 +152,68 @@ const Content = () => {
   return (
     <section>
       {persons.map(person => (
-          <Greeting
-            user={person.name}
-            origin={person.country}
-          />
+        <Greeting
+          key={person.name}
+          user={person.name}
+          origin={person.country}
+        />
       ))}
     </section>
   )
 }
 ```
 
-Now we can render a section containing three different greetings.
+Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduces a second John, using the name attribute as key would not be valid.
+
+## State
+```js {4,5}
+import React, { useState } from 'react'
+
+const Example = () => {
+  const [count, setCount] = useState(0)
+
+  const onButtonClick = () => setCount(count + 1)
+
+  return (
+    <>
+      <p>You clicked {count} times</p>
+      <button onClick={onButtonClick}>
+        Click me
+      </button>
+    </>
+  )
+}
+```
+
+We have initialized the count variable to 0. `useState` returns a tuple with the variable and the function to update the variable.
+
+Be careful when mutating a state consisting of an object or array. New items in the below code will not render, as React will not know that `items` has changed, due to it's reference being the same.
+
+```js {5}
+const Example = () => {
+  const [items, setItems] = useState([1])
+
+  const onButtonClick = () => {
+    items.push(items[items.length - 1] + 1)
+    setItems(items)
+  }
+
+  return (
+    <>
+      <button onClick={onButtonClick}>Click me</button>
+      <ul>
+        {items.map(item => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </>
+  )
+}
+```
+
+We can avoid mutation by passing a new array to `setItems`.
+
+```js
+const onButtonClick = () =>
+  setItems([...items, items[items.length - 1] + 1])
+```
