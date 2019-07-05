@@ -217,3 +217,73 @@ We can avoid mutation by passing a new array to `setItems`.
 const onButtonClick = () =>
   setItems([...items, items[items.length - 1] + 1])
 ```
+
+## useEffect
+`useEffect` is to function components what life cycle methods are for class components. It takes a function which can perform operations. Often this will be API calls to get data.
+
+```js {6-8}
+import React, { useState, useEffect } from 'react'
+// import functionToGetData and ComponentToShowData
+
+const Example = () => {
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    setData(functionToGetData())
+  })
+
+  if (!data) return null
+
+  return <ComponentToShowData data={data} />
+}
+```
+
+The anonomous function passed to `useEffect` will run on every render. There's a few issues with this code. Assuming that `functionToGetData` is asynchronous, we have to wait for the promise to resolve. We can accomplish this with `await`. However, `useEffect` does not accept asynchronous function. We can get around this by creating an asynchronous function inside it.
+
+```js
+const [data, setData] = useState(null)
+
+useEffect(() => {
+  const getAndSetData = async () => {
+    const response = await functionToGetData()
+    setData(response)
+  }
+  
+  getAndSetData()
+})
+```
+
+Another issue is that we will get the data on every render. We can avoid this by passing an empty array to `useEffect`. This will make it run only on the first render.
+
+```js {10}
+const [data, setData] = useState(null)
+
+useEffect(() => {
+  const getAndSetData = async () => {
+    const response = await functionToGetData()
+    setData(response)
+  }
+  
+  getAndSetData()
+}, [])
+```
+
+If we add something to the array we can run it in certain situation. In the example below, it will run anytime `props.id` changes.
+
+```js {3}
+  useEffect(() => {
+    // Do something
+  }, [props.id])
+```
+
+You can add any number of variables to the array. You can also have multiple `useEffect` in a single component.
+
+```js {3,7}
+  useEffect(() => {
+    // Do something on first render
+  }, [])
+
+  useEffect(() => {
+    // Do something when any of the props changes
+  }, [props.id, props.value])
+```
