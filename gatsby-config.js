@@ -23,6 +23,7 @@ module.exports = {
                     {
                         resolve: 'gatsby-remark-vscode',
                     },
+                    'gatsby-remark-autolink-headers',
                 ],
             },
         },

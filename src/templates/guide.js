@@ -23,8 +23,10 @@ const Content = styled.div`
     a {
         text-decoration: none;
         color: #3172b4;
+        outline: none;
     }
-    a:hover {
+    a:hover:not(.anchor),
+    a:focus:not(.anchor) {
         border-bottom: 1px solid #3172b4;
     }
     p {

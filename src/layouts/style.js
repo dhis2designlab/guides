@@ -18,6 +18,17 @@ export const Content = styled.div`
     flex-direction: column;
 `
 
+export const Container = styled.section`
+    margin-top: 60px;
+    display: flex;
+    flex: 1;
+`
+
+export const Wrapper = styled.section`
+    width: 100%;
+    margin-left: 18rem;
+`
+
 export const Main = styled.main`
     width: 100%;
     max-width: 864px;

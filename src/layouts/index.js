@@ -2,8 +2,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { BodyStyle, Content, Main } from './style'
+import { BodyStyle, Content, Container, Wrapper, Main } from './style'
 import { CssReset } from '@dhis2/ui-core'
+import { Sidebar } from './Sidebar'
 
 const Layout = ({ children }) => (
     <>
@@ -18,7 +19,12 @@ const Layout = ({ children }) => (
         <BodyStyle />
         <Content>
             <Header />
-            <Main>{children}</Main>
+            <Container>
+                <Sidebar />
+                <Wrapper>
+                    <Main>{children}</Main>
+                </Wrapper>
+            </Container>
             <Footer />
         </Content>
     </>

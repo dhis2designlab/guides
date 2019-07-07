@@ -4,6 +4,7 @@ export const Container = styled.footer`
     background-color: #1e1e1e;
     color: white;
     width: 100%;
+    z-index: 1;
 `
 
 export const Nav = styled.nav`

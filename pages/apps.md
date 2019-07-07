@@ -1,30 +1,11 @@
 ---
 index: 3
+path: apps
 title: DHIS2 apps
 description: Learn to create DHIS2 apps.
 ---
 
 # DHIS2 apps
-
-## Lorem ipsum
-
-```js{4,5}
-import React, { useState } from 'react'
-
-const Example = () => {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0)
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  )
-}
-```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum mattis porta. Integer ut nulla libero. Donec tincidunt, ex et tincidunt scelerisque, erat est dignissim ex, lacinia congue sem eros sed nisi. Nulla facilisi. Curabitur pretium tincidunt libero, id finibus velit pellentesque at. Maecenas ut nulla a dolor tincidunt volutpat. Phasellus id tristique mauris. Cras sed vehicula eros. Sed id lorem sem. Mauris felis ante, imperdiet sed viverra vitae, porttitor a quam.
 

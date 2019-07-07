@@ -3,6 +3,8 @@ import { LogoIconWhite } from '@dhis2/ui-core'
 import styled from 'styled-components'
 
 export const Container = styled.header`
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,6 +21,7 @@ export const Icon = styled(LogoIconWhite)`
 `
 
 export const Title = styled(Link)`
+    margin-left: 18rem;
     display: flex;
     color: white;
     font-size: 2rem;

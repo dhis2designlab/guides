@@ -1,5 +1,6 @@
 ---
 index: 0
+path: react
 title: React
 description: Learn to use React.
 ---
