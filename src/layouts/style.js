@@ -20,7 +20,7 @@ export const Content = styled.div`
 `
 
 export const Container = styled.section`
-    margin-top: 60px;
+    margin-top: 56px;
     display: flex;
     flex: 1;
 `

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container, StyledLink, StyledCard, Description, Title } from './style'
-import { toPath } from '../../utils/toPath'
 
 const GuideCard = ({ path, title, description }) => (
-    <StyledLink to={path} title={title}>
+    <StyledLink to={path}>
         <StyledCard>
             <Title>{title}</Title>
             <Description>{description}</Description>

@@ -1,8 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
-import { Article } from '../components'
 import * as colors from '../constants/colors'
 
 const StyledCard = styled(Card)`
@@ -59,6 +57,9 @@ const Content = styled.div`
         margin-block-start: 3rem;
         margin-block-end: 1rem;
     }
+    li {
+        line-height: 1.4rem;
+    }
     .vscode-highlight-code {
         font-size: 14px;
         line-height: 1.4;
@@ -74,18 +75,8 @@ const Content = styled.div`
     }
 `
 
-const guide = ({ data }) => (
-    <Article>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </Article>
+export const Article = ({ data, children }) => (
+    <StyledCard>
+        <Content>{!!children && children}</Content>
+    </StyledCard>
 )
-
-export default guide
-
-export const query = graphql`
-    query PostQuery($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-            html
-        }
-    }
-`

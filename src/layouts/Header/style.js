@@ -8,7 +8,6 @@ export const Container = styled.header`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-content: center;
     padding: 12px 0;
     background-color: ${colors.blueDark};
@@ -17,18 +16,20 @@ export const Container = styled.header`
 `
 
 export const Icon = styled(LogoIconWhite)`
-    height: 36px;
+    height: 32px;
     margin-right: 12px;
 `
 
 export const Title = styled(Link)`
-    margin-left: 18rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
     display: flex;
+    align-items: center;
     color: white;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     text-decoration: none;
-    text-align: center;
+    align-content: center;
     margin-block-start: 0;
     margin-block-end: 0;
     &:focus,
