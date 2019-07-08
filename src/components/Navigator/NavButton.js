@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import * as colors from '../../constants/colors'
 
 const StyledSvg = styled.svg`
     transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -16,9 +17,14 @@ const StyledButton = styled.button`
     border: none;
     outline: unset;
     cursor: pointer;
+    padding-left: 12px;
+    padding-right: 12px;
     &:hover,
     &:focus {
-        background-color: rgb(243, 245, 247);
+        background-color: ${colors.focus};
+    }
+    &:active {
+        background-color: ${colors.active};
     }
 `
 

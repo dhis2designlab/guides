@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import { LogoIconWhite } from '@dhis2/ui-core'
 import styled from 'styled-components'
+import * as colors from '../../constants/colors'
 
 export const Container = styled.header`
     position: fixed;
@@ -10,8 +11,8 @@ export const Container = styled.header`
     justify-content: center;
     align-content: center;
     padding: 12px 0;
-    background-color: #215e8c;
-    box-shadow: 0 0 3px 0 #222;
+    background-color: ${colors.blueDark};
+    box-shadow: 0 0 3px 0 ${colors.shadowDark};
     z-index: 1000;
 `
 
@@ -33,9 +34,9 @@ export const Title = styled(Link)`
     &:focus,
     &:hover {
         outline: unset;
-        color: #dadada;
+        color: ${colors.greyLight};
         path {
-            fill: #dadada;
+            fill: ${colors.greyLight};
         }
     }
 `

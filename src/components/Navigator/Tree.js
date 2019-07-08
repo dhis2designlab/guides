@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Location } from '@reach/router'
 import { NavButton } from './NavButton'
+import * as colors from '../../constants/colors'
 
 const Container = styled.div`
-    border-bottom: 1px solid #00000026;
+    border-bottom: 1px solid ${colors.border};
+    border-left: 6px solid white;
+    ${({ active }) => {
+        if (active)
+            return css`
+                border-left-color: ${colors.accent};
+            `
+    }}
 `
 
 const StyledDiv = styled.div`
@@ -14,6 +23,7 @@ const StyledDiv = styled.div`
 const NavLink = styled(Link)`
     color: unset;
     text-decoration: none;
+    outline: none;
     line-height: 3rem;
     width: 100%;
     padding-left: 32px;
@@ -22,13 +32,11 @@ const NavLink = styled(Link)`
     white-space: nowrap;
     &:hover,
     &:focus {
-        background-color: rgb(243, 245, 247);
+        background-color: ${colors.focus};
     }
-`
-
-const StyledSvg = styled.svg`
-    stroke: #215e8c;
-    stroke-width: 2;
+    &:active {
+        background-color: ${colors.active};
+    }
 `
 
 const Nodes = ({ headings }) => (
@@ -39,28 +47,45 @@ const Nodes = ({ headings }) => (
     </>
 )
 
-const NavItem = ({ path, label, parent, expanded, onClick }) => (
+const NavItem = ({ path, label, showButton, expanded, onClick }) => (
     <StyledDiv>
         <NavLink to={path}>{label}</NavLink>
-        {parent && <NavButton expanded={expanded} onClick={onClick} />}
+        {showButton && <NavButton expanded={expanded} onClick={onClick} />}
     </StyledDiv>
 )
 
-export const Tree = ({ heading, subheadings }) => {
+const TreeNodes = ({ heading, pathname, subheadings }) => {
+    const active = pathname.startsWith(heading.path)
+    const hasChildren = subheadings.length > 0
     const [expanded, setExpanded] = useState(false)
 
-    const onClick = () => setExpanded(!expanded)
+    useEffect(() => {
+        if (active !== expanded) toggleExpanded()
+    }, [pathname])
+
+    const toggleExpanded = () => setExpanded(!expanded)
 
     return (
-        <Container>
+        <Container active={active}>
             <NavItem
                 path={heading.path}
                 label={heading.label}
                 expanded={expanded}
-                onClick={onClick}
-                parent={subheadings.length > 0}
+                onClick={toggleExpanded}
+                showButton={hasChildren}
             />
             {subheadings && expanded && <Nodes headings={subheadings} />}
         </Container>
     )
 }
+export const Tree = ({ heading, subheadings }) => (
+    <Location>
+        {({ location }) => (
+            <TreeNodes
+                heading={heading}
+                pathname={location.pathname}
+                subheadings={subheadings}
+            />
+        )}
+    </Location>
+)

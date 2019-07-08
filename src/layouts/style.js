@@ -1,8 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import * as colors from '../constants/colors'
 
 export const BodyStyle = createGlobalStyle`
     body {
-        background-color: #ebebeb;
+        background-color: ${colors.greyDark};
         margin: 0;
         padding: 0;
         font-family: Roboto;

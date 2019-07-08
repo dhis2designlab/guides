@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import * as colors from '../../constants/colors'
 
 export const Container = styled.footer`
-    background-color: #1e1e1e;
+    background-color: ${colors.dark};
     color: white;
     width: 100%;
     z-index: 1;
@@ -26,7 +27,7 @@ export const NavLink = styled.a`
     &:hover,
     &:focus {
         outline: unset;
-        background-color: #3182ce;
+        background-color: ${colors.blueLight};
         border-radius: 4px;
     }
 `

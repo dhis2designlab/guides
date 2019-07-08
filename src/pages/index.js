@@ -9,8 +9,6 @@ const IndexPage = ({ data }) => {
         description: node.frontmatter.description,
     }))
 
-    console.log(guides)
-
     return <GuideCards guides={guides} />
 }
 

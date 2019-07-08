@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import * as colors from '../../constants/colors'
 import { Navigator } from '../../components/Navigator'
 import { toPath } from '../../utils/toPath'
 
@@ -8,7 +9,7 @@ const StyledAside = styled.aside`
     position: fixed;
     height: calc(100vh - 60px);
     background: white;
-    border-right: 1px solid #00000026;
+    border-right: 1px solid ${colors.border};
     width: 18rem;
 `
 

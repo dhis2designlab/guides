@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
+import * as colors from '../constants/colors'
 
 const StyledCard = styled(Card)`
     margin: 20px;
@@ -22,21 +23,21 @@ const Content = styled.div`
     padding: 24px;
     a {
         text-decoration: none;
-        color: #3172b4;
+        color: ${colors.blueDark};
         outline: none;
     }
     a:hover:not(.anchor),
     a:focus:not(.anchor) {
-        border-bottom: 1px solid #3172b4;
+        border-bottom: 1px solid ${colors.blueDark};
     }
     p {
-        line-height: 2rem;
+        line-height: 1.8rem;
         margin-block-start: 1.5em;
         margin-block-end: 1.5em;
         code {
             font-family: monospace;
-            background-color: #1e1e1e;
-            color: #d4d4d4;
+            background-color: ${colors.dark};
+            color: ${colors.code};
             border-radius: 3px;
             margin: 0;
             padding: 0.2em 0.4em;
@@ -67,7 +68,7 @@ const Content = styled.div`
             padding-right: 0;
         }
         .vscode-highlight-line-highlighted {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: ${colors.highlight};
         }
     }
 `

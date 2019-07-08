@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Card } from '@dhis2/ui-core'
+import * as colors from '../../constants/colors'
 
 export const Container = styled.nav`
     display: flex;
@@ -22,8 +23,8 @@ export const StyledLink = styled(Link)`
     &:focus {
         outline: unset;
         div {
-            box-shadow: rgba(64, 75, 90, 0.3) 0px 0px 1px 0px,
-                rgba(64, 75, 90, 0.3) 0px 14px 28px -6px;
+            box-shadow: ${colors.shadowLight} 0px 0px 1px 0px,
+                ${colors.shadowLight} 0px 14px 28px -6px;
         }
     }
 `
@@ -35,7 +36,7 @@ export const StyledCard = styled(Card)`
 `
 
 export const Title = styled.h2`
-    color: #0d0d0e;
+    color: ${colors.text};
     font-size: 1.25rem;
     line-height: 1.6;
     font-weight: 500;
