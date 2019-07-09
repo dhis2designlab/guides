@@ -16,6 +16,7 @@ module.exports = async ({ actions, graphql }) => {
                             slug
                         }
                         frontmatter {
+                            path
                             title
                         }
                     }
@@ -31,7 +32,7 @@ module.exports = async ({ actions, graphql }) => {
 
     allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) =>
         createPage({
-            path: node.fields.slug,
+            path: node.frontmatter.path,
             component: template,
             context: {
                 slug: node.fields.slug,

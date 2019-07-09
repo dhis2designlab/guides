@@ -6,36 +6,38 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
-        "clean": "rm -rf ./public/* ./.cache/*",
+        "clean": "rm -rf ./public/* ./.cache/* ./node_modules/*",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
         "start": "gatsby develop -o"
     },
     "dependencies": {
         "@dhis2/ui-core": "^2.4.3",
-        "babel-plugin-styled-components": "^1.10.0",
+        "@reach/router": "^1.2.1",
         "gatsby": "^2.5.7",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-helmet": "^5.2.1",
+        "styled-components": "^5.0.0-beta.8",
+        "typeface-roboto": "^0.0.54"
+    },
+    "devDependencies": {
+        "@dhis2/cli-style": "^3.2.2",
+        "babel-plugin-styled-components": "^1.10.6",
         "gatsby-plugin-catch-links": "^2.0.15",
         "gatsby-plugin-layout": "^1.0.15",
         "gatsby-plugin-manifest": "^2.1.1",
         "gatsby-plugin-offline": "^2.1.1",
         "gatsby-plugin-react-helmet": "^3.0.12",
-        "gatsby-plugin-styled-components": "^3.0.7",
+        "gatsby-plugin-styled-components": "^3.1.0",
         "gatsby-plugin-styled-jsx": "^3.0.5",
+        "gatsby-remark-autolink-headers": "^2.1.0",
         "gatsby-remark-vscode": "^1.0.4",
         "gatsby-source-filesystem": "^2.0.37",
         "gatsby-transformer-remark": "^2.3.12",
-        "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
-        "react-helmet": "^5.2.1",
-        "styled-components": "^4.2.0",
-        "typeface-roboto": "^0.0.54"
-    },
-    "devDependencies": {
-        "@dhis2/cli-style": "^3.2.2",
         "gh-pages": "^2.0.1",
-        "husky": "^2.3.0"
+        "husky": "^2.3.0",
+        "prop-types": "^15.7.2"
     },
     "repository": {
         "type": "git",

@@ -4,7 +4,7 @@ import { GuideCards } from '../components'
 
 const IndexPage = ({ data }) => {
     const guides = data.allMarkdownRemark.edges.map(({ node }) => ({
-        path: node.fields.slug,
+        path: `/${node.frontmatter.path}`,
         title: node.frontmatter.title,
         description: node.frontmatter.description,
     }))
@@ -15,14 +15,12 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const listQuery = graphql`
-    query ListQuery {
+    query {
         allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___index] }) {
             edges {
                 node {
-                    fields {
-                        slug
-                    }
                     frontmatter {
+                        path
                         title
                         description
                     }

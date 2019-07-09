@@ -1,5 +1,6 @@
 import React from 'react'
 import { Title, Container, Icon } from './style'
+import { Pages } from './Pages'
 
 export const Header = () => (
     <Container>
@@ -7,5 +8,6 @@ export const Header = () => (
             <Icon />
             <span>DHIS2 Design Lab</span>
         </Title>
+        <Pages />
     </Container>
 )
