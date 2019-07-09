@@ -14,6 +14,7 @@ const StyledAside = styled.aside`
     border-right: 1px solid ${colors.border};
     width: 18rem;
     z-index: 100;
+    overflow-y: auto;
 `
 
 const query = graphql`
