@@ -1,9 +1,28 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import styled, { createGlobalStyle } from 'styled-components'
 import { CssReset } from '@dhis2/ui-core'
 import { Header } from './Header'
-import { Sidebar } from './Sidebar'
-import { BodyStyle, Content, Container, Wrapper, Main } from './style'
+import { Container } from './Container'
+import * as colors from '../constants/colors'
+
+const BodyStyle = createGlobalStyle`
+    body {
+        background-color: ${colors.greyDark};
+        margin: 0;
+        padding: 0;
+        font-family: Roboto;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+`
+
+const Content = styled.div`
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+`
 
 const Layout = ({ children }) => (
     <>
@@ -18,12 +37,7 @@ const Layout = ({ children }) => (
         <BodyStyle />
         <Content>
             <Header />
-            <Container>
-                <Sidebar />
-                <Wrapper>
-                    <Main>{children}</Main>
-                </Wrapper>
-            </Container>
+            <Container>{children}</Container>
         </Content>
     </>
 )

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import * as colors from '../constants/colors'
+import { menu, close } from '../constants/icons'
 import { Navigator } from '../components/Navigator'
 import { toPath } from '../utils/toPath'
+import { useWidth } from '../utils/useWidth'
+import { SidebarButton } from './SidebarButton'
 
 const StyledAside = styled.aside`
     position: fixed;
@@ -11,6 +14,13 @@ const StyledAside = styled.aside`
     background: white;
     border-right: 1px solid ${colors.border};
     width: 18rem;
+    z-index: 100;
+    ${({ hide }) => {
+        if (hide)
+            return css`
+                display: none;
+            `
+    }}
 `
 
 const query = graphql`
@@ -48,12 +58,20 @@ const toPage = node => {
 
 export const Sidebar = () => {
     const data = useStaticQuery(query)
+    const narrow = useWidth(900)
+    const [hide, setHide] = useState(true)
 
+    const icon = hide ? menu : close
     const pages = data.allMarkdownRemark.edges.map(({ node }) => toPage(node))
 
+    const toggleHide = () => setHide(!hide)
+
     return (
-        <StyledAside>
-            <Navigator pages={pages} />
-        </StyledAside>
+        <>
+            <StyledAside hide={narrow && hide}>
+                <Navigator pages={pages} />
+            </StyledAside>
+            {narrow && <SidebarButton onClick={toggleHide} icon={icon} />}
+        </>
     )
 }
