@@ -61,11 +61,15 @@ export const Sidebar = () => {
 
     const toggleHide = () => setHide(!hide)
 
+    const onLink = () => {
+        if (narrow) setHide(true)
+    }
+
     return (
         <>
             {(!narrow || !hide) && (
                 <StyledAside>
-                    <Navigator pages={pages} />
+                    <Navigator pages={pages} onLink={onLink} />
                 </StyledAside>
             )}
             {narrow && <SidebarButton onClick={toggleHide} icon={icon} />}

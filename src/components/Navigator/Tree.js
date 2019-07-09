@@ -39,22 +39,24 @@ const NavLink = styled(Link)`
     }
 `
 
-const Nodes = ({ headings }) => (
+const NavItem = ({ path, label, showButton, expanded, onExpand, onLink }) => (
+    <StyledDiv>
+        <NavLink onClick={onLink} to={path}>
+            {label}
+        </NavLink>
+        {showButton && <NavButton expanded={expanded} onClick={onExpand} />}
+    </StyledDiv>
+)
+
+const Nodes = ({ headings, onLink }) => (
     <>
         {headings.map(({ path, label }) => (
-            <NavItem key={path} path={path} label={label} />
+            <NavItem key={path} path={path} label={label} onLink={onLink} />
         ))}
     </>
 )
 
-const NavItem = ({ path, label, showButton, expanded, onClick }) => (
-    <StyledDiv>
-        <NavLink to={path}>{label}</NavLink>
-        {showButton && <NavButton expanded={expanded} onClick={onClick} />}
-    </StyledDiv>
-)
-
-const TreeNodes = ({ heading, pathname, subheadings }) => {
+const TreeNodes = ({ heading, pathname, subheadings, onLink }) => {
     const active = pathname.startsWith(heading.path)
     const hasChildren = subheadings.length > 0
     const [expanded, setExpanded] = useState(false)
@@ -71,20 +73,24 @@ const TreeNodes = ({ heading, pathname, subheadings }) => {
                 path={heading.path}
                 label={heading.label}
                 expanded={expanded}
-                onClick={toggleExpanded}
+                onExpand={toggleExpanded}
                 showButton={hasChildren}
+                onLink={onLink}
             />
-            {subheadings && expanded && <Nodes headings={subheadings} />}
+            {subheadings && expanded && (
+                <Nodes headings={subheadings} onLink={onLink} />
+            )}
         </Container>
     )
 }
-export const Tree = ({ heading, subheadings }) => (
+export const Tree = ({ heading, subheadings, onLink }) => (
     <Location>
         {({ location }) => (
             <TreeNodes
                 heading={heading}
                 pathname={location.pathname}
                 subheadings={subheadings}
+                onLink={onLink}
             />
         )}
     </Location>
