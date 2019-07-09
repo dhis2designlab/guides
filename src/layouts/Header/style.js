@@ -15,7 +15,7 @@ export const Container = styled.header`
     z-index: 1000;
 `
 
-export const Icon = styled(LogoIconWhite)`
+export const Logo = styled(LogoIconWhite)`
     height: 32px;
     margin-right: 12px;
 `

@@ -1,8 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import * as colors from '../../constants/colors'
+import { Icon } from '../Icon'
+import { keyboard_arrow_right } from '../../constants/icons'
 
-const StyledSvg = styled.svg`
+const StyledIcon = styled(Icon)`
     transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
     ${({ expanded }) => {
         if (expanded)
@@ -29,15 +31,7 @@ const StyledButton = styled.button`
 `
 
 const NavIcon = ({ expanded }) => (
-    <StyledSvg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        expanded={expanded}
-    >
-        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-    </StyledSvg>
+    <StyledIcon expanded={expanded} color="black" icon={keyboard_arrow_right} />
 )
 
 export const NavButton = ({ expanded, onClick }) => (

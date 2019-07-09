@@ -1,13 +1,13 @@
 import React from 'react'
-import { Title, Container, Icon } from './style'
+import { Title, Container, Logo } from './style'
 import { Pages } from './Pages'
 
-export const Header = () => (
+export const Header = ({ narrow }) => (
     <Container>
         <Title title="Home" to="/">
-            <Icon />
+            <Logo />
             <span>DHIS2 Design Lab</span>
         </Title>
-        <Pages />
+        {!narrow && <Pages />}
     </Container>
 )

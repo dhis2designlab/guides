@@ -38,7 +38,7 @@ export const Children = ({ children }) => {
 
     return (
         <NarrowProvider narrow={narrow}>
-            <Header />
+            <Header narrow={narrow} />
             <Container limit={900}>{children}</Container>
         </NarrowProvider>
     )

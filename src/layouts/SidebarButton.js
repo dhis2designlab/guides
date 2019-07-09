@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { shadowDark } from '../constants/colors'
+import { Icon } from '../components'
 
 const FloatingButton = styled.button`
     position: fixed;
@@ -22,17 +23,6 @@ const FloatingButton = styled.button`
         background: linear-gradient(180deg, #003e84, #002f63);
     }
 `
-
-const Icon = ({ icon }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-    >
-        <path d={icon} fill="white" />
-    </svg>
-)
 
 export const SidebarButton = ({ icon, onClick }) => (
     <FloatingButton onClick={onClick}>
