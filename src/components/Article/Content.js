@@ -1,21 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext } from 'react'
+import styled, { css } from 'styled-components'
 import { Card } from '@dhis2/ui-core'
 import * as colors from '../../constants/colors'
+import { NarrowContext } from '../../utils/NarrowContext'
 
 const StyledCard = styled(Card)`
     margin: 20px;
     width: calc(100% - 40px) !important;
-    @media (max-width: 900px) {
-        border-radius: unset !important;
-        margin: unset;
-        width: 100% !important;
-        .vscode-highlight {
-            margin-left: -24px;
-            margin-right: -24px;
-            border-radius: unset;
-        }
-    }
+    ${({ narrow }) => {
+        if (narrow)
+            return css`
+                border-radius: unset !important;
+                margin: unset;
+                width: 100% !important;
+                .vscode-highlight {
+                    margin-left: -24px;
+                    margin-right: -24px;
+                    border-radius: unset;
+                }
+            `
+    }}
 `
 
 const StyledDiv = styled.div`
@@ -75,8 +79,12 @@ const StyledDiv = styled.div`
     }
 `
 
-export const Content = ({ children }) => (
-    <StyledCard>
-        <StyledDiv>{children}</StyledDiv>
-    </StyledCard>
-)
+export const Content = ({ children }) => {
+    const narrow = useContext(NarrowContext)
+
+    return (
+        <StyledCard narrow={narrow}>
+            <StyledDiv>{children}</StyledDiv>
+        </StyledCard>
+    )
+}

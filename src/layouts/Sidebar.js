@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import * as colors from '../constants/colors'
 import { menu, close } from '../constants/icons'
 import { Navigator } from '../components/Navigator'
 import { toPath } from '../utils/toPath'
 import { SidebarButton } from './SidebarButton'
+import { NarrowContext } from '../utils/NarrowContext'
 
 const StyledAside = styled.aside`
     position: fixed;
@@ -50,8 +51,9 @@ const toPage = node => {
     }
 }
 
-export const Sidebar = ({ narrow }) => {
+export const Sidebar = () => {
     const data = useStaticQuery(query)
+    const narrow = useContext(NarrowContext)
     const [hide, setHide] = useState(true)
 
     const icon = hide ? menu : close

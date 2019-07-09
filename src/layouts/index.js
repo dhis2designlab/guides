@@ -2,9 +2,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
 import { CssReset } from '@dhis2/ui-core'
-import { Header } from './Header'
-import { Container } from './Container'
 import * as colors from '../constants/colors'
+import { Children } from './Children'
 
 const BodyStyle = createGlobalStyle`
     body {
@@ -36,8 +35,7 @@ const Layout = ({ children }) => (
         <CssReset />
         <BodyStyle />
         <Content>
-            <Header />
-            <Container>{children}</Container>
+            <Children>{children}</Children>
         </Content>
     </>
 )
