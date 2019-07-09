@@ -5,7 +5,6 @@ import * as colors from '../constants/colors'
 import { menu, close } from '../constants/icons'
 import { Navigator } from '../components/Navigator'
 import { toPath } from '../utils/toPath'
-import { useWidth } from '../utils/useWidth'
 import { SidebarButton } from './SidebarButton'
 
 const StyledAside = styled.aside`
@@ -15,12 +14,6 @@ const StyledAside = styled.aside`
     border-right: 1px solid ${colors.border};
     width: 18rem;
     z-index: 100;
-    ${({ hide }) => {
-        if (hide)
-            return css`
-                display: none;
-            `
-    }}
 `
 
 const query = graphql`
@@ -56,9 +49,8 @@ const toPage = node => {
     }
 }
 
-export const Sidebar = () => {
+export const Sidebar = ({ narrow }) => {
     const data = useStaticQuery(query)
-    const narrow = useWidth(900)
     const [hide, setHide] = useState(true)
 
     const icon = hide ? menu : close
@@ -68,9 +60,11 @@ export const Sidebar = () => {
 
     return (
         <>
-            <StyledAside hide={narrow && hide}>
-                <Navigator pages={pages} />
-            </StyledAside>
+            {(!narrow || !hide) && (
+                <StyledAside>
+                    <Navigator pages={pages} />
+                </StyledAside>
+            )}
             {narrow && <SidebarButton onClick={toggleHide} icon={icon} />}
         </>
     )

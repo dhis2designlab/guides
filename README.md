@@ -26,8 +26,8 @@ making the website available at [dhis2designlab.github.io](https://dhis2designla
 ### Adding a new page
 Create a new .md file in the [pages directory](pages), then deploy.
 
-#### Metadata
-The home page is dependent on `index` for ordering, and `title` and `description` for content.
+#### Headers
+`h2` headers show up in the sidebar along with the title. 
 
 #### Code highlighting
     ```js{1,3-5}

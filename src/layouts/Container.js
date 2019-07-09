@@ -16,7 +16,7 @@ export const Container = ({ children }) => {
     return (
         <StyledSection>
             <Sidebar narrow={narrow} />
-            <Main narrow={narrow}>{children}</Main>
+            <Main>{children}</Main>
         </StyledSection>
     )
 }
