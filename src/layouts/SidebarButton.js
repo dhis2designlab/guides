@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { code } from '../constants/colors'
+import { shadowDark } from '../constants/colors'
 
 const FloatingButton = styled.button`
     position: fixed;
@@ -8,8 +8,9 @@ const FloatingButton = styled.button`
     right: 16px;
     z-index: 100;
     background: linear-gradient(180deg, #1565c0, #0650a3);
-    border: 1px solid #002f63;
+    border: none;
     border-radius: 50%;
+    box-shadow: 0 0 3px 0 ${shadowDark};
     height: 48px;
     width: 48px;
     outline: none;

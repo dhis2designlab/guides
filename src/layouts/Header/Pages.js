@@ -16,11 +16,14 @@ const NavLink = styled(Link)`
     user-select: none;
     padding: 0 11px;
     line-height: 2rem;
+    outline: unset;
+    border-radius: 4px;
     &:hover,
     &:focus {
-        outline: unset;
         background-color: ${colors.blueLight};
-        border-radius: 4px;
+    }
+    &:active {
+        background-color: ${colors.blueLightest};
     }
 `
 
