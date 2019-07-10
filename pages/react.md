@@ -31,6 +31,8 @@ The app should now be available at [http://localhost:3000](http://localhost:3000
 npm install
 ```
 
+Dependencies are packages that the app depend on to run or build. CRA is dependendent on the *react* package to run. It is also dependendent on the *react-scripts* package to run commands such as `npm start`.
+
 ### Adding dependecies
 ```bash
 npm install @dhis2/ui-core
@@ -39,13 +41,25 @@ npm install @dhis2/cli-style -D
 
 The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end users. The [@dhis2/ui-core](https://github.com/dhis2/ui-core) package contains a [DHIS2 UI library](../ui). The [@dhis2/cli-style](https://github.com/dhis2/cli-style) package may be used to standardize the formatting of code and git commit messages.
 
-
 ### Building
 ```bash
 npm run build
 ```
 
-This creates an optimized build of the app. You will find it in the *build* directory.
+This creates an optimized build of the app suited for use in production. You will find it in the *build* directory.
+
+### Structure
+#### node_modules/
+This is where the depencies are installed.
+
+#### public/
+*public/index.html* can access all the files in this directory.
+
+#### src/
+This is where source files reside. Files inside this directory are processed to make the build faster.
+
+#### package.json
+This file defines dependencies, scripts, and other properties.
 
 ## Entry point
 ```html
@@ -220,7 +234,7 @@ const onButtonClick = () =>
 ```
 
 ## useEffect
-`useEffect` is to function components what life cycle methods are for class components. It takes a function which can perform operations. Often this will be API calls to get data.
+`useEffect` allows us to perform operations in components. It takes a function which can perform operations. This could for example be API calls. By default `useEffect` runs on every render.
 
 ```js {6-8}
 import React, { useState, useEffect } from 'react'
