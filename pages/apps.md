@@ -7,4 +7,5 @@ description: Learn to create DHIS2 apps.
 
 # DHIS2 apps
 
-*Coming soon...*
+## Header bar
+![Header bar](images/headerbar.png)

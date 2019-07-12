@@ -20,10 +20,14 @@ module.exports = {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [
-                    {
-                        resolve: 'gatsby-remark-vscode',
-                    },
+                    'gatsby-remark-vscode',
                     'gatsby-remark-autolink-headers',
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 776,
+                        },
+                    },
                 ],
             },
         },
