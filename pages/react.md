@@ -200,7 +200,7 @@ const Example = () => {
 }
 ```
 
-We have initialized the count variable to 0. `useState` returns a tuple with the variable and the function to update the variable.
+We have initialized the count variable to 0. `useState` returns a tuple with the variable and the function to update the variable. We refer to such variables as *states*.
 
 Be careful when mutating a state consisting of an object or array. New items in the below code will not render, as React will not know that `items` has changed, due to it's reference being the same.
 
@@ -240,7 +240,7 @@ const onButtonClick = () =>
 import React, { useState, useEffect } from 'react'
 // import functionToGetData and ComponentToShowData
 
-const Example = () => {
+const ShowData = () => {
   const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -302,3 +302,47 @@ You can add any number of variables to the array. You can also have multiple `us
     // Do something when any of the props changes
   }, [props.id, props.value])
 ```
+
+## Hooks
+`useState` and `useEffect` are examples of React [*Hooks*](https://reactjs.org/docs/hooks-intro.html). You can create your own hooks. This allows you to write reusable logic and to have seperation between presentational components and logic.
+
+```js{16}
+// useUserData.js
+
+import { useState, useEffect } from 'react'
+// import functionToGetData
+
+export const useUserData = userId => {
+  const [userData, setUserData] = useState(null)
+
+  useEffect(() => {
+    const getAndSetData = async () => {
+      const response = await functionToGetData(userId)
+      setData(response)
+    }
+  
+    getAndSetData()
+  }, [userId])
+
+  return userData
+}
+```
+
+By setting `userId` as a dependency, `useEffect` will only run the first time `useUserData` is called, and if `userId` changes.
+
+```js{4,8}
+// ShowUserData.js
+
+import React from 'react'
+import { useUserData } from './useUserData'
+// import ComponentToShowData
+
+const ShowUserData = ({ userId }) => {
+  const userData = useUserData(userId)
+
+  if (!userData) return null
+
+  return <ComponentToShowData data={userData} />
+}
+```
+
