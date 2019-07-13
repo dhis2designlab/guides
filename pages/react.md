@@ -6,10 +6,10 @@ description: Learn to use React.
 ---
 
 # React
-[React](https://reactjs.org) is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs](https://reactjs.org/docs/getting-started.html) provide a more comprehensive overview.
+[React][react-home] is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs][react-docs] provide a more comprehensive overview.
 
 ## Create React App
-[Create React App (CRA)](https://facebook.github.io/create-react-app/docs/getting-started) is a tool to create a React apps. To use CRA you need either [npm](https://www.npmjs.com/get-npm) or [Yarn](https://yarnpkg.com/en/docs/install). The choice is yours, but our guides will use npm.
+[Create React App (CRA)][cra] is a tool to create a React apps. To use CRA you need either [npm][npm] or [Yarn][yarn]. The choice is yours, but our guides will use npm.
 
 ### Creating a new app
 ```bash
@@ -24,7 +24,7 @@ A new app is created in the *my-app* directory.
 npm start
 ```
 
-The app should now be available at [http://localhost:3000](http://localhost:3000). Any changes you make to the code should be reflected in your browser.
+The app should now be available at [http://localhost:3000][local-host]. Any changes you make to the code should be reflected in your browser.
 
 ### Installing app dependencies
 ```bash
@@ -39,7 +39,7 @@ npm install @dhis2/ui-core
 npm install @dhis2/cli-style -D
 ```
 
-The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end users. The [@dhis2/ui-core](https://github.com/dhis2/ui-core) package contains a [DHIS2 UI library](../ui). The [@dhis2/cli-style](https://github.com/dhis2/cli-style) package may be used to standardize the formatting of code and git commit messages.
+The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end users. The [@dhis2/ui-core][npm-ui-core] package contains a [DHIS2 UI library][ui]. The [@dhis2/cli-style][cli-style] package may be used to standardize the formatting of code and git commit messages.
 
 ### Building
 ```bash
@@ -122,7 +122,7 @@ All tags tags must be closed. Both above variants are valid, though `<div>` alon
 ### Fragment
 Components can only return a single element. If you want to return an array of elements you may be tempted to wrap them in a `<div></div>`. A better option is to use `<></>`, as you avoid polluting the DOM. `<></>` is shorthand for `<React.Fragment><React.Fragment/>`.
 
-```js {2,6}
+```js{2,6}
 const element = (
   <>
     <p>1</p>
@@ -133,7 +133,7 @@ const element = (
 ```
 
 ## Props
-```js {2,11}
+```js{2,11}
 const Greeting = props => (
   <p>Hello {props.user} from {props.origin}</p>
 )
@@ -152,7 +152,7 @@ const Content = () => {
 
 The `Greeting` component now allows us to customize what is returned. By adding the two attributes, `Greeting` will receive `{ user: 'John', origin: 'Norway' }` in the `props` object. Let's greet some more poeple.
 
-```js {16}
+```js{16}
 const Greeting = props => (
   <p>Hello {props.user} from {props.origin}</p>
 )
@@ -181,7 +181,7 @@ const Content = () => {
 Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduces a second John, using the name attribute as key would not be valid.
 
 ## State
-```js {4,5}
+```js{4,5}
 import React, { useState } from 'react'
 
 const Example = () => {
@@ -204,7 +204,7 @@ We have initialized the count variable to 0. `useState` returns a tuple with the
 
 Be careful when mutating a state consisting of an object or array. New items in the below code will not render, as React will not know that `items` has changed, due to it's reference being the same.
 
-```js {5}
+```js{5}
 const Example = () => {
   const [items, setItems] = useState([1])
 
@@ -236,7 +236,7 @@ const onButtonClick = () =>
 ## useEffect
 `useEffect` allows us to perform operations in components. It takes a function which can perform operations. This could for example be API calls. By default `useEffect` runs on every render.
 
-```js {6-8}
+```js{6-8}
 import React, { useState, useEffect } from 'react'
 // import functionToGetData and ComponentToShowData
 
@@ -270,7 +270,7 @@ useEffect(() => {
 
 Another issue is that we will get the data on every render. We can avoid this by passing an empty array to `useEffect`. This will make it run only on the first render.
 
-```js {10}
+```js{10}
 const [data, setData] = useState(null)
 
 useEffect(() => {
@@ -285,7 +285,7 @@ useEffect(() => {
 
 If we add something to the array we can run it in certain situation. In the example below, it will run anytime `props.id` changes.
 
-```js {3}
+```js{3}
   useEffect(() => {
     // Do something
   }, [props.id])
@@ -293,7 +293,7 @@ If we add something to the array we can run it in certain situation. In the exam
 
 You can add any number of variables to the array. You can also have multiple `useEffect` in a single component.
 
-```js {3,7}
+```js{3,7}
   useEffect(() => {
     // Do something on first render
   }, [])
@@ -304,7 +304,7 @@ You can add any number of variables to the array. You can also have multiple `us
 ```
 
 ## Hooks
-`useState` and `useEffect` are examples of React [*Hooks*](https://reactjs.org/docs/hooks-intro.html). You can create your own hooks. This allows you to write reusable logic and to have seperation between presentational components and logic.
+`useState` and `useEffect` are examples of React [*Hooks*][hooks]. You can create your own hooks. This allows you to write reusable logic and to have seperation between presentational components and logic.
 
 ```js{16}
 // useUserData.js
@@ -346,3 +346,13 @@ const ShowUserData = ({ userId }) => {
 }
 ```
 
+[react-home]: https://reactjs.org
+[react-docs]: https://reactjs.org/docs/getting-started.html
+[cra]: https://facebook.github.io/create-react-app/docs/getting-started
+[npm]: https://www.npmjs.com/get-npm
+[yarn]: https://yarnpkg.com/en/docs/install
+[local-host]: http://localhost:3000
+[npm-ui-core]: https://www.npmjs.com/package/@dhis2/ui-core
+[ui]: ../ui
+[cli-style]: https://www.npmjs.com/package/@dhis2/cli-style
+[hooks]: https://reactjs.org/docs/hooks-intro.html
