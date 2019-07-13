@@ -2,6 +2,7 @@ export const focus = '#f3f5f7'
 export const active = '#e2e2e2'
 export const border = '#00000026'
 export const accent = '#43cbcb'
+export const accentLight = '#d8f7f7'
 export const highlight = '#ffffff1a'
 
 export const text = '#0d0d0e'

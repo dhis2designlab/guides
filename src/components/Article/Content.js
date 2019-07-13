@@ -61,8 +61,18 @@ const StyledDiv = styled.div`
         margin-block-start: 3rem;
         margin-block-end: 1rem;
     }
+    ul {
+        margin-block-start: 0;
+    }
     li {
         line-height: 1.4rem;
+    }
+    blockquote {
+        background: ${colors.accentLight};
+        padding: 0.01rem 2rem;
+        border-left: 3px solid ${colors.accent};
+        margin-inline-start: 0;
+        margin-inline-end: 0;
     }
     .vscode-highlight-code {
         font-size: 14px;
