@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
-        "clean": "rm -rf ./public/* ./.cache/* ./node_modules/*",
+        "clean": "rm -rf ./public/* ./.cache/*",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
         "start": "gatsby develop -o"
@@ -22,7 +22,7 @@
         "typeface-roboto": "^0.0.54"
     },
     "devDependencies": {
-        "@dhis2/cli-style": "^3.2.2",
+        "@dhis2/cli-style": "^4.1.1",
         "babel-plugin-styled-components": "^1.10.6",
         "gatsby-plugin-catch-links": "^2.1.0",
         "gatsby-plugin-layout": "^1.1.0",
@@ -38,7 +38,6 @@
         "gatsby-source-filesystem": "^2.1.2",
         "gatsby-transformer-remark": "^2.6.1",
         "gh-pages": "^2.0.1",
-        "husky": "^3.0.0",
         "prop-types": "^15.7.2"
     },
     "repository": {
@@ -47,11 +46,5 @@
     },
     "bugs": {
         "url": "https://github.com/dhis2designlab/guides/issues"
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "d2-style commit check",
-            "pre-commit": "d2-style js apply"
-        }
     }
 }
