@@ -1,4 +1,5 @@
 import React from 'react'
+import { bool, func } from 'prop-types'
 import styled, { css } from 'styled-components'
 import * as colors from '../../constants/colors'
 import { Icon } from '../Icon'
@@ -34,8 +35,15 @@ const NavIcon = ({ expanded }) => (
     <StyledIcon expanded={expanded} color="black" icon={keyboard_arrow_right} />
 )
 
+NavIcon.propTypes = { expanded: bool }
+
 export const NavButton = ({ expanded, onClick }) => (
     <StyledButton onClick={onClick}>
         <NavIcon expanded={expanded} />
     </StyledButton>
 )
+
+NavButton.propTypes = {
+    expanded: bool,
+    onClick: func.isRequired,
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { arrayOf, shape, func, bool, string } from 'prop-types'
 import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 import { Location } from '@reach/router'
@@ -48,6 +49,15 @@ const NavItem = ({ path, label, showButton, expanded, onExpand, onLink }) => (
     </StyledDiv>
 )
 
+NavItem.propTypes = {
+    path: string.isRequired,
+    label: string.isRequired,
+    showButton: bool,
+    expanded: bool,
+    onExpand: func,
+    onLink: func.isRequired,
+}
+
 const Nodes = ({ headings, onLink }) => (
     <>
         {headings.map(({ path, label }) => (
@@ -55,6 +65,16 @@ const Nodes = ({ headings, onLink }) => (
         ))}
     </>
 )
+
+Nodes.propTypes = {
+    onLink: func.isRequired,
+    headings: arrayOf(
+        shape({
+            path: string.isRequired,
+            label: string.isRequired,
+        })
+    ).isRequired,
+}
 
 const TreeNodes = ({ heading, pathname, subheadings, onLink }) => {
     const active = pathname.startsWith(heading.path)
@@ -83,6 +103,22 @@ const TreeNodes = ({ heading, pathname, subheadings, onLink }) => {
         </Container>
     )
 }
+
+TreeNodes.propTypes = {
+    heading: shape({
+        path: string.isRequired,
+        label: string.isRequired,
+    }).isRequired,
+    pathname: string.isRequired,
+    subheadings: arrayOf(
+        shape({
+            path: string.isRequired,
+            label: string.isRequired,
+        })
+    ),
+    onLink: func.isRequired,
+}
+
 export const Tree = ({ heading, subheadings, onLink }) => (
     <Location>
         {({ location }) => (
@@ -95,3 +131,17 @@ export const Tree = ({ heading, subheadings, onLink }) => (
         )}
     </Location>
 )
+
+Tree.propTypes = {
+    heading: shape({
+        path: string.isRequired,
+        label: string.isRequired,
+    }).isRequired,
+    subheadings: arrayOf(
+        shape({
+            path: string.isRequired,
+            label: string.isRequired,
+        })
+    ),
+    onLink: func.isRequired,
+}
