@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
-        "clean": "rm -rf ./public/* ./.cache/*",
+        "clean": "rimraf public/* .cache/*",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
         "start": "gatsby develop -o"
@@ -38,7 +38,8 @@
         "gatsby-source-filesystem": "^2.1.2",
         "gatsby-transformer-remark": "^2.6.1",
         "gh-pages": "^2.0.1",
-        "prop-types": "^15.7.2"
+        "prop-types": "^15.7.2",
+        "rimraf": "^2.6.3"
     },
     "repository": {
         "type": "git",
