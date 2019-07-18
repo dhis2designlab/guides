@@ -27,14 +27,14 @@ The header bar is available in the [@dhis2/ui-widgets][npm-widgets] package. Fur
 [This example DHIS2 app][app-example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probaly isn't useful for anyone). [App skeleton][apps-app-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
 * [prop-types][prop-types] for type checking
 * [styled-components][styled-components] for styling
-* [husky][husky] and [@dhise/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
+* [husky][husky] and [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
 
 [header-image]: images/headerbar.png
 [design-system]: https://github.com/dhis2/design-system
 [design-system-header]: https://github.com/dhis2/design-system/blob/master/organisms/header-bar.md
 [npm-widgets]: https://www.npmjs.com/package/@dhis2/ui-widgets
 [ui]: ../ui
-[app-skeleton]: https://github.com/dhis2designlab/app-base
+[app-skeleton]: https://github.com/dhis2designlab/app-skeleton
 [react-cra]: ../react#running-the-app
 [app-skeleton-package]: https://github.com/dhis2designlab/app-base/tree/master/package.json
 [app-skeleton-html]: https://github.com/dhis2designlab/app-base/tree/master/public/index.html
