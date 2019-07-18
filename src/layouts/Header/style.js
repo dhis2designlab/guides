@@ -6,10 +6,10 @@ import * as colors from '../../constants/colors'
 export const Container = styled.header`
     position: fixed;
     width: 100%;
+    height: 56px;
     display: flex;
-    flex-wrap: wrap;
     align-content: center;
-    padding: 12px 0;
+    justify-content: space-between;
     background-color: ${colors.blueDark};
     box-shadow: 0 0 3px 0 ${colors.shadowDark};
     z-index: 1000;
@@ -21,8 +21,8 @@ export const Logo = styled(LogoIconWhite)`
 `
 
 export const Title = styled(Link)`
-    margin-left: 1rem;
-    margin-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     align-items: center;
     color: white;
@@ -32,12 +32,10 @@ export const Title = styled(Link)`
     align-content: center;
     margin-block-start: 0;
     margin-block-end: 0;
-    &:focus,
     &:hover {
-        outline: unset;
-        color: ${colors.greyLight};
-        path {
-            fill: ${colors.greyLight};
-        }
+        background: ${colors.blueDarker};
+    }
+    &:active {
+        background: ${colors.blueDarkest};
     }
 `

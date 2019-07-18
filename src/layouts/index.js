@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { CssReset } from '@dhis2/ui-core'
 import * as colors from '../constants/colors'
 import { Children } from './Children'
+import { Header } from './Header'
 
 const BodyStyle = createGlobalStyle`
     body {
@@ -35,6 +36,7 @@ const Layout = ({ children }) => (
         <CssReset />
         <BodyStyle />
         <Content>
+            <Header />
             <Children>{children}</Children>
         </Content>
     </>
