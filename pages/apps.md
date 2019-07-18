@@ -16,15 +16,15 @@ description: Learn to create DHIS2 apps.
 
 The header bar is available in the [@dhis2/ui-widgets][npm-widgets] package. Further instruction to use the library can be found [here][ui].
 
-## App skeleton
-[The app skeleton repository][app-skeleton] may be used as a foundation to create DHIS2 web apps. The following files have variables/properties that need to be changed (e.g. name of the app):
-* [package.json][app-skeleton-package]
-* [public/index.html][app-skeleton-html]
-* [public/manifest.json][app-skeleton-manifest]
-* [src/index.js][app-skeleton-js]
+## Skeleton
+[The app skeleton repository][skeleton] may be used as a foundation to create DHIS2 web apps. The following files have variables/properties that need to be changed (e.g. name of the app):
+* [package.json][skeleton-package]
+* [public/index.html][skeleton-html]
+* [public/manifest.json][skeleton-manifest]
+* [src/index.js][skeleton-js]
 
-## App example
-[This example DHIS2 app][app-example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probaly isn't useful for anyone). [App skeleton][apps-app-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
+## Example
+[This example DHIS2 app][example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probaly isn't useful for anyone). [App skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
 * [prop-types][prop-types] for type checking
 * [styled-components][styled-components] for styling
 * [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
@@ -34,13 +34,13 @@ The header bar is available in the [@dhis2/ui-widgets][npm-widgets] package. Fur
 [design-system-header]: https://github.com/dhis2/design-system/blob/master/organisms/header-bar.md
 [npm-widgets]: https://www.npmjs.com/package/@dhis2/ui-widgets
 [ui]: ../ui
-[app-skeleton]: https://github.com/dhis2designlab/app-skeleton
-[app-skeleton-package]: https://github.com/dhis2designlab/app-skeleton/tree/master/package.json
-[app-skeleton-html]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/index.html
-[app-skeleton-manifest]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/manifest.json
-[app-skeleton-js]: https://github.com/dhis2designlab/app-skeleton/tree/master/src/index.js
-[apps-app-skeleton]: #app-skeleton
-[app-example]: https://github.com/dhis2designlab/app-example
+[skeleton]: https://github.com/dhis2designlab/app-skeleton
+[skeleton-package]: https://github.com/dhis2designlab/app-skeleton/tree/master/package.json
+[skeleton-html]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/index.html
+[skeleton-manifest]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/manifest.json
+[skeleton-js]: https://github.com/dhis2designlab/app-skeleton/tree/master/src/index.js
+[apps-skeleton]: #skeleton
+[example]: https://github.com/dhis2designlab/app-example
 [prop-types]: https://www.npmjs.com/package/prop-types
 [styled-components]: https://www.styled-components.com/
 [cli-style]: https://www.npmjs.com/package/@dhis2/cli-style
