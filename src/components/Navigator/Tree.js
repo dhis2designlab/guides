@@ -27,7 +27,7 @@ const NavLink = styled(Link)`
     line-height: 3rem;
     width: 100%;
     padding-left: 32px;
-    padding-right: 32px;
+    padding-right: 8px;
     letter-spacing: 1px;
     white-space: nowrap;
     &:hover,
