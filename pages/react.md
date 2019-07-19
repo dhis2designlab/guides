@@ -61,7 +61,7 @@ This is where source files reside. Files inside this directory are processed to 
 #### package.json
 This file defines dependencies, scripts, and other properties.
 
-## Entry point
+### Entry point
 ```html
 <!-- public/index.html -->
 
@@ -119,18 +119,58 @@ const element = <div></div>
 
 All tags tags must be closed. Both above variants are valid, though `<div>` alone would be invalid.
 
-### Fragment
-Components can only return a single element. If you want to return an array of elements you may be tempted to wrap them in a `<div></div>`. A better option is to use `<></>`, as you avoid polluting the DOM. `<></>` is shorthand for `<Fragment><Fragment/>`.
+## Components
+```js
+const HelloWorld = () => <p>Hello world!</p>
+
+const hi = <p>hi</p>
+```
+
+`HelloWorld` is a React *component*. Components must be capitalized. `hi` is not a component, but rather a variable consisting of JSX. Such variables should be camelCased.
+
+### Variants
+```js
+const Hi = () => <p>Hi</p>
+
+const Hello = () => {
+  console.log('Hello')
+
+  return <p>Hello</p>
+}
+
+function Bye() {
+  return <p>Bye</p>
+}
+```
+
+Components must return JSX. All of the above variants are valid.
+
+### Components of components
+```js{4,8}
+const Hi = () => <p>Hi</p>
+
+const MuchHi = () => (
+  <div>
+    <Hi />
+    <Hi />
+    <Hi />
+  </div>
+)
+```
+
+Components can contain other components, but can only return a single element. If we remove the highlighted lines, we would return three elements and the component would no longer be valid. A better option is to use `<></>` (shorthand for `<React.Fragment></React.Fragment>`) as we avoid unnecessary div's.
 
 ```js{2,6}
-const element = (
+const MuchHi = () => (
   <>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
+    <Hi />
+    <Hi />
+    <Hi />
   </>
 )
 ```
+
+
 
 ## Props
 ```js{2,11}
@@ -180,7 +220,26 @@ const Content = () => {
 
 Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduces a second John, using the name attribute as key would not be valid.
 
-## State
+### The children prop
+```js
+const Article = props => (
+  <article>
+    {props.children}
+    <p>Bye</p>
+  </article>
+)
+
+const Hi = () => (
+  <Article>
+    <h1>Hi</h1>
+    <p>Nice to meet you</>
+  </Article>
+)
+```
+
+By using the special `children` prop the `Article` component receives everything between the opening and closing component tag as `props.children`.
+
+## States
 ```js{4,5}
 import React, { useState } from 'react'
 
