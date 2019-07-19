@@ -3,21 +3,22 @@
 This is the source code for [dhis2designlab.github.io](https://dhis2designlab.github.io/).
 
 ### Installation
-```
-cd [root_dir]
+```bash
 yarn install
 ```
 
 ### Development
-```
-cd [root_dir]
+```bash
 yarn start
 ```
-http://localhost:8000/
+
+Sometimes it may be necessary to delete files in *.cache/* and *public/*.
+```bash
+yarn clean
+```
 
 ### Deployment
-```
-cd [root_dir]
+```bash
 yarn deploy
 ```
 This will push to the [dhis2designlab.github.io repo](https://github.com/dhis2designlab/dhis2designlab.github.io),
