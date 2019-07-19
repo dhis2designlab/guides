@@ -32,7 +32,7 @@ const useNarrow = limit => {
 }
 
 const StyledSection = styled.section`
-    margin-top: 56px;
+    margin-top: 57px;
     display: flex;
     flex: 1;
 `

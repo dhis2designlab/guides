@@ -20,7 +20,12 @@ module.exports = {
             options: {
                 plugins: [
                     'gatsby-remark-vscode',
-                    'gatsby-remark-autolink-headers',
+                    {
+                        resolve: 'gatsby-remark-autolink-headers',
+                        options: {
+                            offsetY: '80',
+                        },
+                    },
                     {
                         resolve: 'gatsby-remark-images',
                         options: {
