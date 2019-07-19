@@ -19,7 +19,6 @@
         "react-helmet": "^5.2.1",
         "styled-components": "^5.0.0-beta.8",
         "typeface-lato": "^0.0.75",
-        "typeface-roboto": "^0.0.54",
         "typeface-rubik": "^0.0.72"
     },
     "devDependencies": {
