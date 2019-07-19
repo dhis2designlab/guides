@@ -6,6 +6,10 @@ description: Learn to create DHIS2 dashboard apps.
 ---
 
 # DHIS2 dashboard apps
+
+## Dashboard
+![DHIS2 dashboard][dashboard-image]
+
 Dashboard apps (previously referred to as *widgets*) can be added to the DHIS2 dashboard, similar to how maps and tables can be displayed in the dashboard. Dashboard apps are not displayed in the header bar's app menu. If the `appType` property in *manifest.webapp* is set to `DASHBOARD_WIDGET`, then DHIS2 will install the app as a dashboard app. If you use the [d2-manifest][d2-manifest], then this is typically done in *package.json*.
 
 ```json{3}
@@ -33,6 +37,7 @@ Dashboard apps (previously referred to as *widgets*) can be added to the DHIS2 d
 * [styled-components][styled-components] for styling
 * [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
 
+[dashboard-image]: images/dashboard.png
 [design-system]: https://github.com/dhis2/design-system
 [d2-manifest]: https://www.npmjs.com/package/d2-manifest
 [skeleton]: https://github.com/dhis2designlab/dashboard-app-skeleton
