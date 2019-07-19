@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Icon } from '../../components'
 import { info } from '../../constants/icons'
-import { blueDarker, blueDarkest } from '../../constants/colors'
 
 const StyledLink = styled(Link)`
     width: 56px;
@@ -11,12 +10,6 @@ const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover {
-        background: ${blueDarker};
-    }
-    &:active {
-        background: ${blueDarkest};
-    }
 `
 
 const StyledIcon = styled(Icon)`

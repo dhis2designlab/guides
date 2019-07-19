@@ -12,7 +12,7 @@ const Container = styled.div`
     ${({ active }) => {
         if (active)
             return css`
-                border-left-color: ${colors.accent};
+                border-left-color: ${colors.accentAlt};
             `
     }}
 `
@@ -31,6 +31,7 @@ const NavLink = styled(Link)`
     padding-right: 8px;
     letter-spacing: 1px;
     white-space: nowrap;
+    font-size: 0.9rem;
     &:hover,
     &:focus {
         background-color: ${colors.focus};

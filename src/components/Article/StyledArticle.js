@@ -1,21 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import * as colors from '../../constants/colors'
 
-export const StyledDiv = styled.div`
+export const StyledArticle = styled.article`
     padding: 24px;
+    max-width: 776px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Lato;
+    color: black;
     a {
         text-decoration: none;
-        color: ${colors.blueDark};
+        color: ${colors.blue};
         outline: none;
     }
     a:hover:not(.anchor),
     a:focus:not(.anchor) {
-        border-bottom: 1px solid ${colors.blueDark};
+        border-bottom: 1px solid ${colors.blue};
     }
     p {
         line-height: 1.8rem;
-        margin-block-start: 1.5em;
-        margin-block-end: 1.5em;
+        margin-block-start: 2rem;
+        margin-block-end: 2rem;
         code {
             font-family: monospace;
             background-color: ${colors.dark};
@@ -25,20 +30,25 @@ export const StyledDiv = styled.div`
             padding: 0.2em 0.4em;
         }
     }
+    h1,
+    h2,
+    h3 {
+        border-bottom: 1px solid ${colors.accent};
+    }
     h1 {
-        font-size: 3rem;
+        font-size: 2.6rem;
+        line-height: 3.6rem;
         margin-block-start: 1rem;
-        margin-block-end: 1rem;
+        margin-block-end: 2rem;
     }
     h2 {
         font-size: 2rem;
-        margin-block-start: 3rem;
-        margin-block-end: 1rem;
+        line-height: 3rem;
+        margin-block-start: 5rem;
     }
     h3 {
         font-size: 1.4rem;
-        margin-block-start: 3rem;
-        margin-block-end: 1rem;
+        line-height: 2.4rem;
     }
     ul {
         margin-block-start: 0;
@@ -66,4 +76,14 @@ export const StyledDiv = styled.div`
             background-color: ${colors.highlight};
         }
     }
+    ${({ narrow }) => {
+        if (narrow)
+            return css`
+                .vscode-highlight {
+                    margin-left: -24px;
+                    margin-right: -24px;
+                    border-radius: unset;
+                }
+            `
+    }}
 `

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Card } from '@dhis2/ui-core'
 import * as colors from '../../constants/colors'
 
 export const Container = styled.nav`
@@ -10,39 +9,41 @@ export const Container = styled.nav`
     justify-content: center;
     align-content: space-between;
     padding: 8px;
+    &::after {
+        content: '';
+        width: 354px;
+    }
 `
 
 export const StyledLink = styled(Link)`
     margin: 12px;
-    text-align: center;
     text-decoration: none;
+    outline: unset;
+    width: 330px;
+    box-shadow: 0 0 1px 0 ${colors.shadow}, 0 3px 8px -2px ${colors.shadowDark};
     div {
-        transition: all 200ms;
+        transition: 300ms;
     }
     &:hover,
     &:focus {
-        outline: unset;
-        div {
-            box-shadow: ${colors.shadowLight} 0px 0px 1px 0px,
-                ${colors.shadowLight} 0px 14px 28px -6px;
-        }
+        box-shadow: 0 0 1px 0 ${colors.shadowDark},
+            0 8px 18px -4px ${colors.shadowLight};
     }
 `
 
-export const StyledCard = styled(Card)`
-    height: 220px !important;
-    width: 400px !important;
-    padding: 16px;
+export const Content = styled.article`
+    padding: 0 32px;
 `
 
 export const Title = styled.h2`
     color: ${colors.text};
-    font-size: 1.25rem;
-    line-height: 1.6;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 410;
+    margin-block-start: 1.75rem;
+    margin-block-end: 1.5rem;
 `
 
 export const Description = styled.p`
-    padding-top: 24px;
-    color: black;
+    color: ${colors.text};
+    margin-block-end: 3em;
 `

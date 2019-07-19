@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { shadowDark } from '../constants/colors'
+import * as colors from '../constants/colors'
 import { Icon } from '../components'
 
 const FloatingButton = styled.button`
@@ -8,19 +8,18 @@ const FloatingButton = styled.button`
     bottom: 16px;
     right: 16px;
     z-index: 100;
-    background: linear-gradient(180deg, #1565c0, #0650a3);
+    background: ${colors.accentDark};
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 3px 0 ${shadowDark};
+    box-shadow: 0px 1px 4px 2px ${colors.shadowDark};
     height: 48px;
     width: 48px;
     outline: none;
-    &:focus,
     &:hover {
-        background: linear-gradient(180deg, #054fa3, #034793);
+        background: ${colors.accentDarker};
     }
     &:active {
-        background: linear-gradient(180deg, #003e84, #002f63);
+        background: ${colors.accentDarkest};
     }
 `
 

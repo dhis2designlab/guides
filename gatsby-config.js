@@ -2,7 +2,6 @@
 
 module.exports = {
     plugins: [
-        'gatsby-plugin-styled-jsx',
         'gatsby-plugin-styled-components',
         {
             resolve: 'gatsby-plugin-manifest',
@@ -10,8 +9,8 @@ module.exports = {
                 name: 'DHIS2 Design Lab',
                 short_name: 'DHIS2 Design Lab',
                 start_url: '/',
-                background_color: '#ebebeb',
-                theme_color: '#215e8c',
+                background_color: '#ffffff',
+                theme_color: '#393d4d',
                 display: 'minimal-ui',
                 icon: 'src/images/dhis2.png',
             },

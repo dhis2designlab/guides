@@ -1,13 +1,15 @@
 import React from 'react'
 import { string, arrayOf, shape } from 'prop-types'
-import { Container, StyledLink, StyledCard, Description, Title } from './style'
+import { Container, StyledLink, Description, Title, Content } from './style'
+import { Banner } from './Banner'
 
 const GuideCard = ({ path, title, description }) => (
     <StyledLink to={path}>
-        <StyledCard>
+        <Banner />
+        <Content>
             <Title>{title}</Title>
             <Description>{description}</Description>
-        </StyledCard>
+        </Content>
     </StyledLink>
 )
 

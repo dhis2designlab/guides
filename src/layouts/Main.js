@@ -15,17 +15,9 @@ const Wrapper = styled.section`
 
 const StyledMain = styled.main`
     width: 100%;
-    max-width: 864px;
     margin-right: auto;
     margin-left: auto;
     flex: 1;
-    ${({ narrow }) => {
-        if (narrow)
-            return css`
-                height: 100%;
-                max-width: unset;
-            `
-    }}
 `
 
 export const Main = ({ children }) => {
@@ -33,7 +25,7 @@ export const Main = ({ children }) => {
 
     return (
         <Wrapper narrow={narrow}>
-            <StyledMain narrow={narrow}>{children}</StyledMain>
+            <StyledMain>{children}</StyledMain>
         </Wrapper>
     )
 }

@@ -1,17 +1,16 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
-import { CssReset } from '@dhis2/ui-core'
-import * as colors from '../constants/colors'
 import { Children } from './Children'
 import { Header } from './Header'
+import { text } from '../constants/colors'
 
 const BodyStyle = createGlobalStyle`
     body {
-        background-color: ${colors.greyDark};
         margin: 0;
         padding: 0;
-        font-family: Roboto;
+        color: ${text};
+        font-family: Rubik;
         display: flex;
         min-height: 100vh;
         flex-direction: column;
@@ -33,7 +32,6 @@ const Layout = ({ children }) => (
             />
             <html lang="en" />
         </Helmet>
-        <CssReset />
         <BodyStyle />
         <Content>
             <Header />
