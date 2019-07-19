@@ -58,7 +58,7 @@ export const StyledArticle = styled.article`
     blockquote {
         background: ${colors.accentLight};
         padding: 0.01rem 2rem;
-        border-left: 3px solid ${colors.accent};
+        border-left: 6px solid ${colors.accent};
         margin-inline-start: 0;
         margin-inline-end: 0;
     }
