@@ -10,8 +10,8 @@ export const StyledArticle = styled.article`
     color: black;
     a {
         text-decoration: none;
-        color: ${colors.blue};
         outline: none;
+        color: ${colors.blue};
     }
     a:hover:not(.anchor),
     a:focus:not(.anchor) {
@@ -31,8 +31,7 @@ export const StyledArticle = styled.article`
         }
     }
     h1,
-    h2,
-    h3 {
+    h2 {
         border-bottom: 1px solid ${colors.accent};
     }
     h1 {
@@ -64,11 +63,9 @@ export const StyledArticle = styled.article`
         margin-inline-end: 0;
     }
     .vscode-highlight-code {
+        font-family: monospace;
         font-size: 14px;
         line-height: 1.4;
-        span {
-            font-family: monospace;
-        }
         .vscode-highlight-line {
             padding-right: 0;
         }
