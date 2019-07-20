@@ -3,23 +3,18 @@ import { Link } from 'gatsby'
 import * as colors from '../../constants/colors'
 
 export const Container = styled.nav`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    column-width: 330px;
+    grid-template-columns: repeat(auto-fit, 330px);
+    column-gap: 24px;
+    row-gap: 24px;
+    padding: 24px;
     justify-content: center;
-    align-content: space-between;
-    padding: 8px;
-    &::after {
-        content: '';
-        width: 354px;
-    }
 `
 
 export const StyledLink = styled(Link)`
-    margin: 12px;
     text-decoration: none;
     outline: unset;
-    width: 330px;
     box-shadow: 0 0 1px 0 ${colors.shadow}, 0 3px 8px -2px ${colors.shadowDark};
     div {
         transition: 300ms;

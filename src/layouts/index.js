@@ -23,6 +23,12 @@ const Content = styled.div`
     flex-direction: column;
 `
 
+const StyledSection = styled.section`
+    margin-top: 57px;
+    display: flex;
+    flex: 1;
+`
+
 const Layout = ({ children }) => (
     <>
         <Helmet title="DHIS2 Design Lab">
@@ -35,7 +41,9 @@ const Layout = ({ children }) => (
         <BodyStyle />
         <Content>
             <Header />
-            <Children>{children}</Children>
+            <StyledSection>
+                <Children>{children}</Children>
+            </StyledSection>
         </Content>
     </>
 )

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { node, bool } from 'prop-types'
 import styled, { css } from 'styled-components'
-import { NarrowContext } from '../utils/NarrowContext'
 
-const Wrapper = styled.section`
+const StyledMain = styled.main`
     width: 100%;
     margin-left: 18rem;
     ${({ narrow }) => {
@@ -13,19 +13,11 @@ const Wrapper = styled.section`
     }}
 `
 
-const StyledMain = styled.main`
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    flex: 1;
-`
+export const Main = ({ children, narrow }) => (
+    <StyledMain narrow={narrow}>{children}</StyledMain>
+)
 
-export const Main = ({ children }) => {
-    const narrow = useContext(NarrowContext)
-
-    return (
-        <Wrapper narrow={narrow}>
-            <StyledMain>{children}</StyledMain>
-        </Wrapper>
-    )
+Main.propTypes = {
+    children: node,
+    narrow: bool,
 }

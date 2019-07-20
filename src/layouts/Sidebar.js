@@ -4,9 +4,8 @@ import styled from 'styled-components'
 import * as colors from '../constants/colors'
 import { menu, close } from '../constants/icons'
 import { Navigator } from '../components/Navigator'
-import { toPath } from '../utils/toPath'
+import { NarrowContext, toPath } from '../utils'
 import { SidebarButton } from './SidebarButton'
-import { NarrowContext } from '../utils/NarrowContext'
 
 const StyledAside = styled.aside`
     position: fixed;
