@@ -10,13 +10,15 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     outline: unset;
     box-shadow: 0 0 1px 0 ${colors.shadow}, 0 3px 8px -2px ${colors.shadowDark};
-    div {
-        transition: 300ms;
-    }
+    transition: 300ms;
     &:hover,
     &:focus {
         box-shadow: 0 0 1px 0 ${colors.shadowDark},
             0 8px 18px -4px ${colors.shadowLight};
+    }
+    &:active {
+        box-shadow: 0 0 1px 0 ${colors.shadow},
+            0 3px 8px -2px ${colors.shadowDark};
     }
 `
 
