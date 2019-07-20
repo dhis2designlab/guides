@@ -1,26 +1,20 @@
 import React from 'react'
 import { string, arrayOf, shape } from 'prop-types'
-import { Container, StyledLink, Description, Title, Content } from './style'
-import { Banner } from './Banner'
+import styled from 'styled-components'
+import { GuideCard } from './GuideCard'
 
-const GuideCard = ({ path, title, description }) => (
-    <StyledLink to={path}>
-        <Banner />
-        <Content>
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-        </Content>
-    </StyledLink>
-)
-
-GuideCard.propTypes = {
-    path: string.isRequired,
-    title: string.isRequired,
-    description: string.isRequired,
-}
+const StyledNav = styled.nav`
+    display: grid;
+    column-width: 330px;
+    grid-template-columns: repeat(auto-fit, 330px);
+    column-gap: 24px;
+    row-gap: 24px;
+    padding: 24px;
+    justify-content: center;
+`
 
 export const GuideCards = ({ guides }) => (
-    <Container>
+    <StyledNav>
         {guides.map(g => (
             <GuideCard
                 key={g.path}
@@ -29,7 +23,7 @@ export const GuideCards = ({ guides }) => (
                 description={g.description}
             />
         ))}
-    </Container>
+    </StyledNav>
 )
 
 GuideCards.propTypes = {
