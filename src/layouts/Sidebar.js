@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import * as colors from '../constants/colors'
@@ -50,7 +50,7 @@ const toPage = node => {
     }
 }
 
-export const Sidebar = () => {
+export const Sidebar = ({ path, hash }) => {
     const data = useStaticQuery(query)
     const narrow = useContext(NarrowContext)
     const [hide, setHide] = useState(true)
@@ -58,17 +58,17 @@ export const Sidebar = () => {
     const icon = hide ? menu : close
     const pages = data.allMarkdownRemark.edges.map(({ node }) => toPage(node))
 
-    const toggleHide = () => setHide(!hide)
-
-    const onLink = () => {
+    useEffect(() => {
         if (narrow) setHide(true)
-    }
+    }, [path, hash])
+
+    const toggleHide = () => setHide(!hide)
 
     return (
         <>
             {(!narrow || !hide) && (
                 <StyledAside>
-                    <Navigator pages={pages} onLink={onLink} />
+                    <Navigator pages={pages} path={path} />
                 </StyledAside>
             )}
             {narrow && <SidebarButton onClick={toggleHide} icon={icon} />}

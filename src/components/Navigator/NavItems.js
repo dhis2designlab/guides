@@ -1,17 +1,16 @@
 import React from 'react'
-import { arrayOf, shape, func, string } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import { NavItem } from './NavItem'
 
-export const NavItems = ({ headings, onLink }) => (
+export const NavItems = ({ headings }) => (
     <>
         {headings.map(({ path, label }) => (
-            <NavItem key={path} path={path} label={label} onLink={onLink} />
+            <NavItem key={path} path={path} label={label} />
         ))}
     </>
 )
 
 NavItems.propTypes = {
-    onLink: func.isRequired,
     headings: arrayOf(
         shape({
             path: string.isRequired,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { arrayOf, shape, func, string } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import styled, { css } from 'styled-components'
 import { NavItem } from './NavItem'
 import { NavItems } from './NavItems'
@@ -16,14 +16,14 @@ const Container = styled.div`
     }}
 `
 
-export const Branch = ({ heading, pathname, subheadings, onLink }) => {
-    const active = pathname.startsWith(heading.path)
+export const Branch = ({ heading, path, subheadings }) => {
+    const active = path.startsWith(heading.path)
     const hasChildren = subheadings.length > 0
     const [expanded, setExpanded] = useState(false)
 
     useEffect(() => {
         if (active !== expanded) toggleExpanded()
-    }, [pathname])
+    }, [path])
 
     const toggleExpanded = () => setExpanded(!expanded)
 
@@ -35,11 +35,8 @@ export const Branch = ({ heading, pathname, subheadings, onLink }) => {
                 expanded={expanded}
                 onExpand={toggleExpanded}
                 showButton={hasChildren}
-                onLink={onLink}
             />
-            {subheadings && expanded && (
-                <NavItems headings={subheadings} onLink={onLink} />
-            )}
+            {subheadings && expanded && <NavItems headings={subheadings} />}
         </Container>
     )
 }
@@ -49,12 +46,11 @@ Branch.propTypes = {
         path: string.isRequired,
         label: string.isRequired,
     }).isRequired,
-    pathname: string.isRequired,
+    path: string.isRequired,
     subheadings: arrayOf(
         shape({
             path: string.isRequired,
             label: string.isRequired,
         })
     ),
-    onLink: func.isRequired,
 }

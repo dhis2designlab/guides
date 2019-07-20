@@ -51,5 +51,4 @@ NavItem.propTypes = {
     showButton: bool,
     expanded: bool,
     onExpand: func,
-    onLink: func.isRequired,
 }
