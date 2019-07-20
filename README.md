@@ -32,6 +32,17 @@ This will push to the [dhis2designlab.github.io repo][site-repo], making the web
 
 Create a new .md file in the [pages directory](pages), then deploy.
 
+### Metadata
+Your markdown need to include the following at the top.
+```md
+---
+index: 7                    <!-- order in home -->
+path: code                  <!-- url path -->
+title: Code                 <!-- title in home and sidebar -->
+description: Learn to Code. <!-- description in home -->
+---
+```
+
 #### Headers
 
 `h2` headers show up in the sidebar along with the title (set in the markdown file's metadata).
