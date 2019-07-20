@@ -9,7 +9,7 @@ description: Learn to use React.
 [React][react-home] is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs][react-docs] provide a more comprehensive overview.
 
 ## Create React App
-[Create React App (CRA)][cra] is a tool to create a React apps. To use CRA you need either [npm][npm] or [Yarn][yarn]. The choice is yours, but our guides will use npm.
+As the name implies, [Create React App (CRA)][cra] is a tool to create React apps. CRA includes scripts which take care of configurations needed to run and build your app. To use CRA you need either [npm][npm] or [Yarn][yarn]. The choice is yours, but our guides will use npm.
 
 ### Creating a new app
 ```bash
