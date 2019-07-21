@@ -4,9 +4,21 @@
     "description": "Source for https://dhis2designlab.github.io",
     "version": "0.1.0",
     "license": "MIT",
+    "developer": {
+        "name": "Terje Uglebakken",
+        "email": "terjeug@ifi.uio.no",
+        "url": "https://www.mn.uio.no/ifi/english/research/networks/hisp/dhis2-design-lab/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dhis2designlab/guides.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dhis2designlab/guides/issues"
+    },
     "scripts": {
         "build": "gatsby build",
-        "clean": "rimraf public/* .cache/*",
+        "clean": "gatsby clean",
         "deploy": "gatsby build && gh-pages -d public -b master -r git@github.com:dhis2designlab/dhis2designlab.github.io.git",
         "format": "d2-style js apply",
         "start": "gatsby develop -o"
@@ -37,14 +49,6 @@
         "gatsby-source-filesystem": "^2.1.2",
         "gatsby-transformer-remark": "^2.6.1",
         "gh-pages": "^2.0.1",
-        "prop-types": "^15.7.2",
-        "rimraf": "^2.6.3"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dhis2designlab/guides.git"
-    },
-    "bugs": {
-        "url": "https://github.com/dhis2designlab/guides/issues"
+        "prop-types": "^15.7.2"
     }
 }
