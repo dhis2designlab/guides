@@ -19,8 +19,8 @@ export const StyledArticle = styled.article`
     }
     p {
         line-height: 1.8rem;
-        margin-block-start: 2rem;
-        margin-block-end: 2rem;
+        margin-block-start: 1.4rem;
+        margin-block-end: 1.4rem;
         code {
             font-family: monospace;
             background-color: ${colors.dark};
