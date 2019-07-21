@@ -75,7 +75,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
 ```
 
 ```js
@@ -220,6 +221,21 @@ const Content = () => {
 
 Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduces a second John, using the name attribute as key would not be valid.
 
+### Destructuring
+```js
+const Greeting = props => (
+  <p>Hello {props.user} from {props.origin}</p>
+)
+```
+
+Some prefer to destructure the props object. The above component may then be written as below.
+
+```js
+const Greeting = ({ user, origin }) => (
+  <p>Hello {user} from {origin}</p>
+)
+```
+
 ### The children prop
 ```js
 const Article = props => (
@@ -285,7 +301,7 @@ const Example = () => {
 }
 ```
 
-We can avoid mutation by passing a new array to `setItems`.
+We can avoid mutation by passing a new array to `setItems` by using the [spread syntax][spread] (`...`).
 
 ```js
 const onButtonClick = () =>
@@ -412,6 +428,7 @@ const ShowUserData = ({ userId }) => {
 [yarn]: https://yarnpkg.com/en/docs/install
 [local-host]: http://localhost:3000
 [npm-ui-core]: https://www.npmjs.com/package/@dhis2/ui-core
+[spread]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 [ui]: ../ui
 [cli-style]: https://www.npmjs.com/package/@dhis2/cli-style
 [hooks]: https://reactjs.org/docs/hooks-intro.html
