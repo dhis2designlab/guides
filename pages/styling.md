@@ -13,7 +13,7 @@ This guide will introduce you to various approaches to styling when you use Reac
 
 ```js
 const headingStyle = {
-  color: red;
+  color: 'red';
   fontSize: 30;
 }
 
@@ -22,11 +22,11 @@ const Hello = () => (
 )
 ```
 
-It's possible use the `style` prop to apply styles. Notice that we use `fontSize` and not `font-size`. Keys must be camelCased. `px` is added to _most_ (exceptions can be found [here][pixel-string]) numerical values, thus the font-size will `30px`.
+It's possible use the `style` prop to apply styles. Note that keys must be camelCased. We use `fontSize` and not `font-size`. `px` is added to *most* (exceptions can be found [here][pixel-string]) numerical values, thus the font-size will `30px`.
 
-Note that it is not recommended to use inline styles due to poor performance and lack of automatic support of older browsers.
+Note that it is not recommended to use inline styles due to poorer performance compared to other approaches and lack of automatic support of older browsers.
 
-## Plain css
+## Plain CSS
 
 ```css
 /* style.css */
@@ -41,24 +41,25 @@ h1 {
 }
 ```
 
-```js{2,7}
-import React from 'react'
+```js{1,6}
 import './style.css'
 
 const Hello = () => <h1>Hello</h1>
 
-const Hi = () => <span className={blue}>hi</span>
+const Hi = () => (
+  <span className={blue}>hi</span>
+)
 ```
 
 You can import css files in JavaScript files. Notice that we use `className` and not `class`.
 
 ## styled-components
 
-[styled-components][styled-components] is one of several libraries created for styling in React. Other popular alternatives include [Emotion][emotion] and [Styled SJX][styled-jsx].
+[styled-components][styled-components] is one of several libraries created for styling in React. Other popular alternatives include [Emotion][emotion] and [Styled JSX][styled-jsx].
 
 ### Creating components
 
-You can create React components with CSS in JS.
+You can create React components by using `styled`. The syntax is exactly the same as if you were to write CSS. The CSS rules are scoped within the component, which means that for the below example, any other `h1` elements will not be affected. The CSS rules are also automatically vendor prefixed, meaning that rules are created to work in different browsers. 
 
 ```js
 import styled from 'styled-components'
@@ -73,7 +74,7 @@ const Hello = () => <Heading>Hello</Heading>
 
 ### Applying styles to components
 
-You can also apply styles _to_ any React component that apply the `className` prop. Notice how we use `styled()` for components, and not `styled.`.
+You can also apply styles _to_ any React component that apply the `className` prop. Notice how we use `styled()` for components, and not `styled.` as we did with `h1`.
 
 ```js
 import styled from 'styled-components'
@@ -83,12 +84,14 @@ const BlueHello = styled(Hello)`
   font-size: 30px;
 `
 
-const Hello = ({ className }) => <h1 className={className}>Hello</h1>
+const Hello = ({ className }) => (
+  <h1 className={className}>Hello</h1>
+)
 ```
 
 ### Styling DHIS2 components
 
-The components in [@dhis2/ui-core][ui-core] and [@dhis2/ui-widgets][ui-widgets] accept the `className`, meaning you can use styled-components.
+The components in [@dhis2/ui-core][ui-core] and [@dhis2/ui-widgets][ui-widgets] accept the `className` prop, meaning you can use styled-components.
 
 ```js
 import styled from 'styled-components'
@@ -99,6 +102,17 @@ const FixedHeaderBar = styled(HeaderBar)`
   width: 100%;
   z-index: 1000;
   top: 0;
+`
+```
+
+Note that you have to use `!important` when you want to override CSS rules already set by a component.
+
+```js
+import styled from 'styled-components'
+import { Card } from '@dhis2/ui-core'
+
+const FixedHeaderBar = styled(Card)`
+  width: 50% !important;
 `
 ```
 
@@ -113,11 +127,13 @@ const ColoredSpan = styled.span`
   color: ${props => props.color};
 `
 
-const RedHi = () => <ColoredSpan color="red">Hi</ColoredSpan>
+const RedHi = () => (
+  <ColoredSpan color="red">Hi</ColoredSpan>
+)
 ```
 
 ### Global style
-The styles that styled-components applies are scoped within the component. If you want create globally scoped style, then you can use `createGlobalStyle`. You should then add `<GlobalStyle />` to your top level component.
+If you want create globally scoped style, then you can use `createGlobalStyle`. You should then add `<GlobalStyle />` to your top level component.
 
 ```js
 import { createGlobalStyle } from 'styled-components'
@@ -127,7 +143,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 `
+
+const App = () => (
+  <>
+    <GlobalStyle />
+    {/* other components */}
+  <>
+)
 ```
+
 
 [pixel-string]: https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59
 [cra]: ..react#create-react-app
