@@ -48,7 +48,7 @@ export const StyledArticle = styled.article`
     h3 {
         font-size: 1.4rem;
         line-height: 2.4rem;
-        margin-block-start: 4rem;
+        margin-block-start: 3rem;
     }
     ul {
         margin-block-start: 0;
@@ -73,6 +73,12 @@ export const StyledArticle = styled.article`
         .vscode-highlight-line-highlighted {
             background-color: ${colors.highlight};
         }
+    }
+    /* Work around for https://github.com/gatsbyjs/gatsby/issues/10870 */
+    li p {
+        line-height: unset;
+        margin-block-start: unset;
+        margin-block-end: unset;
     }
     ${({ narrow }) => {
         if (narrow)
