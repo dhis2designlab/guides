@@ -9,11 +9,14 @@ description: Learn to use React.
 [React][react-home] is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs][react-docs] provide a more comprehensive overview.
 
 ## Create React App
-As the name implies, [Create React App (CRA)][cra] is a tool to create React apps. CRA includes scripts which take care of configurations needed to run and build your app. To use CRA you need either [npm][npm] or [Yarn][yarn]. The choice is yours, but our guides will use npm.
+As the name implies, [Create React App (CRA)][cra] is a tool to create React apps. CRA includes scripts which take care of configurations needed to run and build your app. To use CRA you need either [npm][npm] or [Yarn][yarn].
 
 ### Creating a new app
 ```bash
 npx create-react-app my-app
+# or
+yarn create react-app my-app
+
 cd my-app
 ```
 
@@ -22,12 +25,16 @@ A new app is created in the *my-app* directory.
 ### Running the app
 ```bash
 npm start
+# or
+yarn start
 ```
 
 The app should now be available at [http://localhost:3000][local-host]. Any changes you make to the code should be reflected in your browser.
 
 ### Installing app dependencies
 ```bash
+npm install
+# or
 npm install
 ```
 
@@ -37,6 +44,9 @@ Dependencies are packages that the app depend on to run or build. CRA is depende
 ```bash
 npm install @dhis2/ui-core
 npm install @dhis2/cli-style -D
+# or
+yarn add @dhis2/ui-core
+yarn add @dhis2/cli-style -D
 ```
 
 The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end users. The [@dhis2/ui-core][npm-ui-core] package contains a [DHIS2 UI library][ui]. The [@dhis2/cli-style][cli-style] package may be used to standardize the formatting of code and git commit messages.
@@ -44,6 +54,8 @@ The above packages are only used as examples. The *-D* flag installs a package i
 ### Building
 ```bash
 npm run build
+# or
+yarn build
 ```
 
 This creates an optimized build of the app suited for use in production. You will find it in the *build* directory.
@@ -65,7 +77,11 @@ This file defines dependencies, scripts, and other properties.
 ```html
 <!-- public/index.html -->
 
-<div id="root"></div>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
 ```
 
 ```js
@@ -106,8 +122,9 @@ JS expressions inside JSX must be inside curly braces.
 
 ### Attributes
 ```js
-const element =
+const element = (
   <button onClick={someFunction}>Click me</button>
+)
 ```
 
 Attributes are camel cased, thus we use `onClick` and not `onclick`. In some cases the JSX equivalent of HTML attributes differ in other ways (e.g. `className` in JSX and `class` in HTML).
