@@ -17,11 +17,32 @@ description: Learn to create DHIS2 apps.
 The header bar is available in the [@dhis2/ui-widgets][npm-widgets] package. Further instruction to use the library can be found [here][ui].
 
 ## Skeleton
-[The app skeleton repository][skeleton] may be used as a foundation to create DHIS2 web apps. The following files have variables/properties that need to be changed (e.g. name of the app):
-* [package.json][skeleton-package]
-* [public/index.html][skeleton-html]
-* [public/manifest.json][skeleton-manifest]
-* [src/index.js][skeleton-js]
+[The app skeleton repository][skeleton] may be used as a foundation to create DHIS2 web apps.
+
+### Building
+After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. You may also want to add the file name to [.gitignore][skeleton-gitignore]. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
+
+### package.json
+The following keys should be changed in [package.json][skeleton-package]:
+* name
+* description
+* developer
+    * name (required for generating manifest.json)
+    * email (optional)
+    * url (optional)
+* license (if you want another license)
+* manifest.webapp
+    * name
+    * description
+
+### index.html
+Change `<title>app-name</title>` in [public/index.html][skeleton-html].
+
+### manifest.json
+Many of the same keys should changed in [public/manifest.json][skeleton-manifest] as for [manifest.json][apps-manifest]. You can read about the purpose of this file [here][google-manifest].
+
+### index.js
+Change `appName` in [src/index.js][skeleton-js]. It might also be necessary to change `developmentServer`. You need to be logged in to this server during development.
 
 ## Example
 [This example DHIS2 app][example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probaly isn't useful for anyone). [App skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
@@ -29,16 +50,20 @@ The header bar is available in the [@dhis2/ui-widgets][npm-widgets] package. Fur
 * [styled-components][styled-components] for styling
 * [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
 
+
 [header-image]: images/headerbar.png
 [design-system]: https://github.com/dhis2/design-system
 [design-system-header]: https://github.com/dhis2/design-system/blob/master/organisms/header-bar.md
 [npm-widgets]: https://www.npmjs.com/package/@dhis2/ui-widgets
 [ui]: ../ui
 [skeleton]: https://github.com/dhis2designlab/app-skeleton
+[skeleton-gitignore]: https://github.com/dhis2designlab/app-skeleton/tree/master/.gitignore#L25
 [skeleton-package]: https://github.com/dhis2designlab/app-skeleton/tree/master/package.json
-[skeleton-html]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/index.html
+[skeleton-html]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/index.html#L38
 [skeleton-manifest]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/manifest.json
-[skeleton-js]: https://github.com/dhis2designlab/app-skeleton/tree/master/src/index.js
+[apps-manifest]: #manifestjson
+[google-manifest]: https://developers.google.com/web/fundamentals/web-app-manifest/
+[skeleton-js]: https://github.com/dhis2designlab/app-skeleton/tree/master/src/index.js#L9
 [apps-skeleton]: #skeleton
 [example]: https://github.com/dhis2designlab/app-example
 [prop-types]: https://www.npmjs.com/package/prop-types
