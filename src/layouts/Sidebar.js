@@ -12,9 +12,13 @@ const StyledAside = styled.aside`
     height: calc(100vh - 56px);
     background: white;
     border-right: 1px solid ${colors.border};
-    width: 18rem;
     z-index: 100;
     overflow-y: auto;
+    overflow-x: hidden;
+    visibility: ${props => (props.hide ? 'hidden' : 'visible')};
+    width: ${props => (props.hide ? '0' : '18rem')};
+    transition: ${props =>
+        props.transition ? 'width ease-in-out 0.2s' : 'unset'};
 `
 
 const query = graphql`
@@ -59,6 +63,10 @@ export const Sidebar = ({ path, hash }) => {
     const pages = data.allMarkdownRemark.edges.map(({ node }) => toPage(node))
 
     useEffect(() => {
+        if (narrow && !hide) setHide(true)
+    }, [narrow])
+
+    useEffect(() => {
         if (narrow) setHide(true)
     }, [path, hash])
 
@@ -66,11 +74,9 @@ export const Sidebar = ({ path, hash }) => {
 
     return (
         <>
-            {(!narrow || !hide) && (
-                <StyledAside>
-                    <Navigator pages={pages} path={path} />
-                </StyledAside>
-            )}
+            <StyledAside transition={narrow} hide={narrow && hide}>
+                <Navigator pages={pages} path={path} />
+            </StyledAside>
             {narrow && <SidebarButton onClick={toggleHide} icon={icon} />}
         </>
     )
