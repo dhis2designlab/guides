@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { Icon } from '../../components'
 import { info } from '../../constants/icons'
+import { code } from '../../constants/colors'
 
 const StyledLink = styled(Link)`
     width: 56px;
@@ -19,6 +20,6 @@ const StyledIcon = styled(Icon)`
 
 export const AboutLink = () => (
     <StyledLink title="About this website" to="/about">
-        <StyledIcon icon={info} />
+        <StyledIcon icon={info} color={code} />
     </StyledLink>
 )
