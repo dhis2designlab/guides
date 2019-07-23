@@ -4,6 +4,7 @@ import * as colors from '../constants/colors'
 import { Icon } from '../components'
 
 const FloatingButton = styled.button`
+    fill: white;
     position: fixed;
     bottom: 16px;
     right: 16px;

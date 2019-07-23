@@ -16,6 +16,7 @@ const StyledIcon = styled(Icon)`
 `
 
 const StyledButton = styled.button`
+    fill: ${colors.text};
     background: none;
     border: none;
     outline: unset;
@@ -32,7 +33,7 @@ const StyledButton = styled.button`
 `
 
 const NavIcon = ({ expanded }) => (
-    <StyledIcon expanded={expanded} color="black" icon={keyboard_arrow_right} />
+    <StyledIcon expanded={expanded} icon={keyboard_arrow_right} />
 )
 
 NavIcon.propTypes = { expanded: bool }

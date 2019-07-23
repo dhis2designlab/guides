@@ -13,6 +13,7 @@ export const accentDarkest = '#282b36'
 
 export const text = '#414141'
 export const code = '#d4d4d4'
+export const grey = '#a8a8a8'
 
 export const shadowLight = '#404b5a47'
 export const shadow = '#404b5a4a'
