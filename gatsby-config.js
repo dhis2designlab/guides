@@ -4,6 +4,13 @@ module.exports = {
     plugins: [
         'gatsby-plugin-styled-components',
         {
+            resolve: 'gatsby-plugin-nprogress',
+            options: {
+                color: '#43cbcb',
+                showSpinner: false,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: 'DHIS2 Design Lab',
