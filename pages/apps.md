@@ -39,13 +39,13 @@ The following keys should be changed in [package.json][skeleton-package]:
 Change `<title>app-name</title>` in [public/index.html][skeleton-html].
 
 ### manifest.json
-Many of the same keys should changed in [public/manifest.json][skeleton-manifest] as for [manifest.json][apps-manifest]. You can read about the purpose of this file [here][google-manifest].
+Many of the same keys should be changed in [public/manifest.json][skeleton-manifest] as for [manifest.json][apps-manifest]. You can read about the purpose of this file [here][google-manifest].
 
 ### index.js
 Change `appName` in [src/index.js][skeleton-js]. It might also be necessary to change `developmentServer`. You need to be logged in to this server during development.
 
 ## Example
-[This example DHIS2 app][example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probaly isn't useful for anyone). [App skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
+[This example DHIS2 app][example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probably isn't useful for anyone). [App skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
 * [prop-types][prop-types] for type checking
 * [styled-components][styled-components] for styling
 * [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting

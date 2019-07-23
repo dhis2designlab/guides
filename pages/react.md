@@ -6,7 +6,7 @@ description: Learn to use React.
 ---
 
 # React
-[React][react-home] is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs][react-docs] provide a more comprehensive overview.
+[React][react-home] is a free and open-source JavaScript library created by Facebook. This guide is a brief introduction to React. The [React Docs][react-docs] provides a more comprehensive overview.
 
 ## Create React App
 As the name implies, [Create React App (CRA)][cra] is a tool to create React apps. CRA includes scripts which take care of configurations needed to run and build your app. To use CRA you need either [npm][npm] or [Yarn][yarn].
@@ -38,7 +38,7 @@ npm install
 npm install
 ```
 
-Dependencies are packages that the app depend on to run or build. CRA is dependendent on the *react* package to run. It is also dependendent on the *react-scripts* package to run commands such as `npm start`.
+Dependencies are packages that the app depend on to run or build. CRA is dependent on the *react* package to run. It is also dependent on the *react-scripts* package to run commands such as `npm start`.
 
 ### Adding dependecies
 ```bash
@@ -49,7 +49,7 @@ yarn add @dhis2/ui-core
 yarn add @dhis2/cli-style -D
 ```
 
-The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end users. The [@dhis2/ui-core][npm-ui-core] package contains a [DHIS2 UI library][ui]. The [@dhis2/cli-style][cli-style] package may be used to standardize the formatting of code and git commit messages.
+The above packages are only used as examples. The *-D* flag installs a package in devDependencies, and should be used for packages that are not used in production by end-users. The [@dhis2/ui-core][npm-ui-core] package contains a [DHIS2 UI library][ui]. The [@dhis2/cli-style][cli-style] package may be used to standardize the formatting of code and git commit messages.
 
 ### Building
 ```bash
@@ -62,7 +62,7 @@ This creates an optimized build of the app suited for use in production. You wil
 
 ### Structure
 #### node_modules/
-This is where the depencies are installed.
+This is where the dependencies are installed.
 
 #### public/
 *public/index.html* can access all the files in this directory.
@@ -127,7 +127,7 @@ const element = (
 )
 ```
 
-Attributes are camel cased, thus we use `onClick` and not `onclick`. In some cases the JSX equivalent of HTML attributes differ in other ways (e.g. `className` in JSX and `class` in HTML).
+Attributes are camelCased, thus we use `onClick` and not `onclick`. In some cases the JSX equivalent of HTML attributes differ in other ways (e.g. `className` in JSX and `class` in HTML).
 
 ### Closing tags
 ```js
@@ -135,7 +135,7 @@ const element = <div />
 const element = <div></div>
 ```
 
-All tags tags must be closed. Both above variants are valid, though `<div>` alone would be invalid.
+All tags must be closed. Both above variants are valid, though `<div>` alone would be invalid.
 
 ## Components
 ```js
@@ -208,7 +208,7 @@ const Content = () => {
 }
 ```
 
-The `Greeting` component now allows us to customize what is returned. By adding the two attributes, `Greeting` will receive `{ user: 'John', origin: 'Norway' }` in the `props` object. Let's greet some more poeple.
+The `Greeting` component now allows us to customize what is returned. By adding the two attributes, `Greeting` will receive `{ user: 'John', origin: 'Norway' }` in the `props` object. Let's greet some more people.
 
 ```js{16}
 const Greeting = props => (
@@ -236,7 +236,7 @@ const Content = () => {
 }
 ```
 
-Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduces a second John, using the name attribute as key would not be valid.
+Now we can render a section containing three different greetings. Notice the `key` attribute. This is necessary for React to handle changes to elements rendered from a collection. The key needs to be unique among siblings. If we introduce a second John, using the name attribute as the key would not be valid.
 
 ### Destructuring
 ```js
@@ -294,7 +294,7 @@ const Example = () => {
 
 We have initialized the count variable to 0. `useState` returns a tuple with the variable and the function to update the variable. We refer to such variables as *states*.
 
-Be careful when mutating a state consisting of an object or array. New items in the below code will not render, as React will not know that `items` has changed, due to it's reference being the same.
+Be careful when mutating a state consisting of an object or array. New items in the below code will not render, as React will not know that `items` have changed, due to its reference being the same.
 
 ```js{5}
 const Example = () => {
@@ -326,7 +326,7 @@ const onButtonClick = () =>
 ```
 
 ## useEffect
-`useEffect` allows us to perform operations in components. It takes a function which can perform operations. This could for example be API calls. By default `useEffect` runs on every render.
+`useEffect` allows us to perform operations in components. It takes a function which can perform operations. This could, for example, be API calls. By default, `useEffect` runs on every render.
 
 ```js{6-8}
 import React, { useState, useEffect } from 'react'
@@ -345,7 +345,7 @@ const ShowData = () => {
 }
 ```
 
-The anonomous function passed to `useEffect` will run on every render. There's a few issues with this code. Assuming that `functionToGetData` is asynchronous, we have to wait for the promise to resolve. We can accomplish this with `await`. However, `useEffect` does not accept asynchronous function. We can get around this by creating an asynchronous function inside it.
+The anonymous function passed to `useEffect` will run on every render. There are a few issues with this code. Assuming that `functionToGetData` is asynchronous, we have to wait for the promise to resolve. We can accomplish this with `await`. However, `useEffect` does not accept asynchronous function. We can get around this by creating an asynchronous function inside it.
 
 ```js
 const [data, setData] = useState(null)
@@ -375,7 +375,7 @@ useEffect(() => {
 }, [])
 ```
 
-If we add something to the array we can run it in certain situation. In the example below, it will run anytime `props.id` changes.
+If we add something to the array we can make it run only in certain situations. In the example below, it will run anytime `props.id` changes.
 
 ```js{3}
   useEffect(() => {
@@ -396,7 +396,7 @@ You can add any number of variables to the array. You can also have multiple `us
 ```
 
 ## Hooks
-`useState` and `useEffect` are examples of React [*Hooks*][hooks]. You can create your own hooks. This allows you to write reusable logic and to have seperation between presentational components and logic.
+`useState` and `useEffect` are examples of React [*Hooks*][hooks]. You can create custom hooks. This allows you to write reusable logic and to have separation between presentational components and logic.
 
 ```js{16}
 // useUserData.js

@@ -22,7 +22,7 @@ const Hello = () => (
 )
 ```
 
-It's possible use the `style` prop to apply styles. Note that keys must be camelCased. We use `fontSize` and not `font-size`. `px` is added to *most* (exceptions can be found [here][pixel-string]) numerical values, thus the font-size will `30px`.
+It's possible to use the `style` prop to apply styles. Note that keys must be camelCased. We use `fontSize` and not `font-size`. `px` is added to *most* (exceptions can be found [here][pixel-string]) numerical values, thus the font-size will `30px`.
 
 Note that it is not recommended to use inline styles due to poorer performance compared to other approaches and lack of automatic support of older browsers.
 
@@ -51,7 +51,7 @@ const Hi = () => (
 )
 ```
 
-You can import css files in JavaScript files. Notice that we use `className` and not `class`.
+You can import CSS files in JavaScript files. Notice that we use `className` and not `class`.
 
 ## styled-components
 
@@ -59,7 +59,7 @@ You can import css files in JavaScript files. Notice that we use `className` and
 
 ### Creating components
 
-You can create React components by using `styled`. The syntax is exactly the same as if you were to write CSS. The CSS rules are scoped within the component, which means that for the below example, any other `h1` elements will not be affected. The CSS rules are also automatically vendor prefixed, meaning that rules are created to work in different browsers. 
+You can create React components by using `styled`. The syntax is exactly the same as if you were to write CSS. The CSS rules are scoped within the component, which means that for the below example, any other `h1` elements will not be affected. The CSS rules are also automatically vendor-prefixed, meaning that rules are created to work in different browsers. 
 
 ```js
 import styled from 'styled-components'
@@ -133,7 +133,7 @@ const RedHi = () => (
 ```
 
 ### Global style
-If you want create globally scoped style, then you can use `createGlobalStyle`. You should then add `<GlobalStyle />` to your top level component.
+If you want to create a globally scoped style, then you can use `createGlobalStyle`. You should then add `<GlobalStyle />` to your top-level component.
 
 ```js
 import { createGlobalStyle } from 'styled-components'

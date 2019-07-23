@@ -25,7 +25,7 @@ Dashboard apps (previously referred to as *widgets*) can be added to the DHIS2 d
 [DHIS2 Design System][design-system] contains helpful principles to design DHIS apps, including dashboard apps. There are exceptions, e.g. that dashboard apps should not include the header bar.
 
 ## Skeleton
-[The dashboard app skeleton repository][skeleton] may be used as a foundation to create DHIS2 dashboard apps. Rembember to change the app name in [package.json][skeleton-package].
+[The dashboard app skeleton repository][skeleton] may be used as a foundation to create DHIS2 dashboard apps.
 
 ### Building
 After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. You may also want to add the file name to [.gitignore][skeleton-gitignore]. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
