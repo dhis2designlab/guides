@@ -148,7 +148,7 @@ const App = () => (
   <>
     <GlobalStyle />
     {/* other components */}
-  <>
+  </>
 )
 ```
 
