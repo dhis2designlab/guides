@@ -144,7 +144,7 @@ const HelloWorld = () => <p>Hello world!</p>
 const hi = <p>hi</p>
 ```
 
-`HelloWorld` is a React *component*. Components must be capitalized. `hi` is not a component, but rather a variable consisting of JSX. Such variables should be camelCased.
+`HelloWorld` is a React *component*, which is a function returning JSX. Components must be capitalized. `hi` is not a component, but rather a variable consisting of JSX. Such variables should be camelCased.
 
 ### Variants
 ```js
@@ -187,8 +187,6 @@ const MuchHi = () => (
   </>
 )
 ```
-
-
 
 ## Props
 ```js{2,11}
