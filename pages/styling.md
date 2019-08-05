@@ -13,8 +13,8 @@ This guide will introduce you to various approaches to styling when you use Reac
 
 ```js
 const headingStyle = {
-  color: 'red';
-  fontSize: 30;
+  color: 'red',
+  fontSize: 30,
 }
 
 const Hello = () => (
@@ -24,7 +24,7 @@ const Hello = () => (
 
 It's possible to use the `style` prop to apply styles. Note that keys must be camelCased. We use `fontSize` and not `font-size`. `px` is added to *most* (exceptions can be found [here][pixel-string]) numerical values, thus the font-size will `30px`.
 
-Note that it is not recommended to use inline styles due to poorer performance compared to other approaches and lack of automatic support of older browsers.
+Note that it is generally not recommended to use inline styles due to poorer performance compared to other approaches and lack of automatic support of older browsers.
 
 ## Plain CSS
 
