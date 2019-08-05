@@ -26,7 +26,18 @@ module.exports = {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [
-                    'gatsby-remark-vscode',
+                    {
+                        resolve: 'gatsby-remark-vscode',
+                        options: {
+                            extensions: [
+                                {
+                                    identifier:
+                                        'jpoissonnier.vscode-styled-components',
+                                    version: '0.0.26',
+                                },
+                            ],
+                        },
+                    },
                     {
                         resolve: 'gatsby-remark-autolink-headers',
                         options: {

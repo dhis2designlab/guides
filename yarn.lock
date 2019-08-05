@@ -5683,10 +5683,10 @@ gatsby-remark-images@^3.1.5:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.0.1"
 
-gatsby-remark-vscode@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-vscode/-/gatsby-remark-vscode-1.0.6.tgz#c7e625de059dbcbb4feb0893fd83b376b6bf7b54"
-  integrity sha512-X3QhB9wZlFkdhtPLooH8DdxwcepL52h1mEN3MM6se1iKVZOM9W0JYExsinegcdrsbc/2c3QiZKQNb1fw9CUvEQ==
+gatsby-remark-vscode@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-vscode/-/gatsby-remark-vscode-1.1.0.tgz#570d2215a14a6ae42404f0ac91502917597addb7"
+  integrity sha512-LH0LUQ47cYgk0LmGPjIHyeNs8ecAbpONq1FUCab6UVVb4VtBoSVjd72YHjQNKlmGam86i3Z3P9bYOEyKyVmtww==
   dependencies:
     comment-json "^1.1.3"
     decompress "^4.2.0"
