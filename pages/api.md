@@ -13,7 +13,7 @@ Application Programming Interfaces (API) allows applications to communicate with
 REST (Representational state transfer) is a software archetecural style, and often a logical choice for building APIs. RESTful APIs takes advantage of HTTP methodologies, and use GET to retrieve a resource (eg. data), PUT to change the state of or update a resource, POST to create a resource, and DELETE to remove it.
 
 
-DHIS2 has an open RESTful API to  access and manipulate data stored in the instance of DHIS2. The full documentation is available [here]]dhis2-api-doc]-
+DHIS2 has an open RESTful API to  access and manipulate data stored in the instance of DHIS2. The full documentation is available [here][dhis2-api-doc].
 
 
 
