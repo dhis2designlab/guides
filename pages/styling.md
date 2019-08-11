@@ -111,7 +111,7 @@ Note that you have to use `!important` when you want to override CSS rules alrea
 import styled from 'styled-components'
 import { Card } from '@dhis2/ui-core'
 
-const FixedHeaderBar = styled(Card)`
+const CustomCard = styled(Card)`
   width: 50% !important;
 `
 ```
