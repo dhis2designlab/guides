@@ -5,7 +5,7 @@ This is the source code for [dhis2designlab.github.io][site].
 ### Installation
 
 ```bash
-yarn install
+yarn
 ```
 
 ### Development
