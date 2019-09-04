@@ -39,7 +39,7 @@ The dhis2 UI component library consists mostly of atomic elements. This library 
 
 
 ## Standards
-For each of the components in the UI there is are recommended usages, in other words standards for how (and when) to use the different components. They are described [here][standards-style-guide].
+For each of the components in the UI there is are recommended usages, in other words standards for how (and when) to use the different components. They are described [here][standards-style-guide] under the *Components* section.
 
 
 ## Getting started
