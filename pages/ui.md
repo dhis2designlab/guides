@@ -21,26 +21,21 @@ The dhis2 design system consists of *three parts*;
 
 ## Design principles
 For dhis2, design principles consists of five focus areas:
-- Typography: guidance for font sizes (scale) and line length
-- Color: color scale and guidelines for use
-- Spacing, alignment, stacking
-- Content & comminication: guidelines for writing understandable messages for the user.
-- Icons: guidelines for how to use icons
+- [Typography][typography]: guidance for font sizes (scale) and line length
+- [Color][color]: color scale and guidelines for use
+- [Spacing, alignment, stacking][spacing]
+- [Content & comminication][content]: guidelines for writing understandable messages for the user.
+- [Icons][icons]: guidelines for how to use icons
 
 
-The style guide is available [here][standards-style-guide].
+The full overview of the style guide is available [here][standards-style-guide].
 
 ## Collection of components
 Collections of components can consist of components that are visual, or functional, or both. The dhis2 provides UI components, in other words components providing a visual interface. Functional components provides  pre-made functionality to the applications. 
 
 The components can be seen as building-blocks of various sizes. Atomic design splits them up in atoms, molecules, organisms, and templates. Atoms, the smallest components, are the basic bulding-block, for example buttons or inputfields. By combining atoms together, one can build more complex structures, such as molecules and organisms. You can read more about atomic design [here][atomic-design]. 
 
-The dhis2 UI component library consists mostly of atomic elements. This library is called *ui-core*. Currently, the only organism in the UI is the dhis2 headerbar, this is located in the library *ui-widgets*. 
-
-
-### [UI-core][ui-core], Dhis2 Atomic UI components:
-
-### [UI widgets][ui-widgets], eg. Headerbar:
+The dhis2 UI component library consists mostly of atomic elements. This library is called [*ui-core*][ui-core]. Currently, the only organism in the UI is the dhis2 headerbar, this is located in the library [*ui-widgets*][ui-widgets]. 
 
 
 ## Standards
@@ -65,6 +60,11 @@ If you are using the skeleton applications, these libraries are already installe
 [npm-ui-widget]: https://www.npmjs.com/package/@dhis2/ui-widgets
 [ui-core]: https://github.com/dhis2/ui-core
 [ui-widgets]: https://github.com/dhis2/ui-widgets
+[typography]: https://github.com/dhis2/design-system/blob/master/principles/typography.md
+[color]: https://github.com/dhis2/design-system/blob/master/principles/color.md
+[spacing]: https://github.com/dhis2/design-system/blob/master/principles/spacing-alignment.md
+[content]: https://github.com/dhis2/design-system/blob/master/principles/content-communication.md
+[icons]: https://github.com/dhis2/design-system/blob/master/principles/icons.md
 
 
 
