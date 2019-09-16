@@ -42,7 +42,13 @@ Change `<title>app-name</title>` in [public/index.html][skeleton-html].
 Many of the same keys should be changed in [public/manifest.json][skeleton-manifest] as for [manifest.json][apps-manifest]. You can read about the purpose of this file [here][google-manifest].
 
 ### index.js
-Change `appName` in [src/index.js][skeleton-js]. It might also be necessary to change `developmentServer`. You need to be logged in to this server during development.
+Change `appName` in [src/index.js][skeleton-js].
+
+### .env.development
+It might be necessary to change `REACT_APP_DHIS2_BASE_URL` in [.env.development][skeleton-env-dev]. You need to be logged in to this server during development.
+
+### .env
+It might be necessary to change `REACT_APP_DHIS2_API_VERSION` in [.env][skeleton-env].
 
 ## Example
 [This example DHIS2 app][example] may be used to get some ideas on how to develop DHIS2 web apps. The functionality of the app is to edit the code of organisation units (which probably isn't useful for anyone). [App skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
@@ -64,6 +70,8 @@ Change `appName` in [src/index.js][skeleton-js]. It might also be necessary to c
 [apps-manifest]: #manifestjson
 [google-manifest]: https://developers.google.com/web/fundamentals/web-app-manifest/
 [skeleton-js]: https://github.com/dhis2designlab/app-skeleton/tree/master/src/index.js#L9
+[skeleton-env-dev]: https://github.com/dhis2designlab/app-skeleton/tree/master/.env.development
+[skeleton-env]: https://github.com/dhis2designlab/app-skeleton/tree/master/.env
 [apps-skeleton]: #skeleton
 [example]: https://github.com/dhis2designlab/app-example
 [prop-types]: https://www.npmjs.com/package/prop-types
