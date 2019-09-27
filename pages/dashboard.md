@@ -43,15 +43,8 @@ The following keys should be changed in [package.json][skeleton-package]:
     * name
     * description
 
-### index.js
-It might be necessary to change `developmentServer` in [src/index.js][skeleton-js]. You need to be logged in to this server during development.
-
-## Example
-[This example DHIS2 dashboard app][example] may be used to get some ideas on how to develop DHIS2 dashboard apps. This example app displays a welcoming message to the user. [Dashboard app skeleton][apps-skeleton] was used as a foundation to create the app. The app also uses libraries such as:
-* [@dhis2/app-runtime][app-runtime] to get data from the DHIS2 core
-* [prop-types][prop-types] for type checking
-* [styled-components][styled-components] for styling
-* [@dhis2/cli-style][cli-style] for enforcing git commit and code formatting, as well as linting
+### Environment variables
+It might be necessary to change the environment variables in [.env][skeleton-env] and [.env.development][skeleton-env-dev].
 
 
 [dashboard-image]: images/dashboard.png
@@ -59,10 +52,5 @@ It might be necessary to change `developmentServer` in [src/index.js][skeleton-j
 [d2-manifest]: https://www.npmjs.com/package/d2-manifest
 [skeleton]: https://github.com/dhis2designlab/dashboard-app-skeleton
 [skeleton-package]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/package.json
-[skeleton-js]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/src/index.js#L15
-[example]: https://github.com/dhis2designlab/dashboard-app-example
-[apps-skeleton]: #skeleton
-[app-runtime]: https://github.com/dhis2/app-runtime/tree/master/services/data
-[prop-types]: https://www.npmjs.com/package/prop-types
-[styled-components]: https://www.styled-components.com/
-[cli-style]: https://www.npmjs.com/package/@dhis2/cli-style
+[skeleton-env]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/.env
+[skeleton-env-dev]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/.env.development
