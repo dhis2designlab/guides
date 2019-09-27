@@ -64,7 +64,7 @@ Alternatively you could add them to the `start` script in `package.json`.
 [The app skeleton repository][skeleton] may be used as a foundation to create DHIS2 web apps. It's recommended to avoiding using this, unless you are having issues with the [DHIS2 Application Platform][app-platform].
 
 ### Building
-After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. You may also want to add the file name to [.gitignore][skeleton-gitignore]. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
+After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
 
 ### package.json
 The following keys should be changed in [package.json][skeleton-package]:
@@ -111,7 +111,6 @@ It might be necessary to change `REACT_APP_DHIS2_API_VERSION` in [.env][skeleton
 [ui]: ../ui
 [app-platform]: #dhis2-application-platform
 [skeleton]: https://github.com/dhis2designlab/app-skeleton
-[skeleton-gitignore]: https://github.com/dhis2designlab/app-skeleton/tree/master/.gitignore#L25
 [skeleton-package]: https://github.com/dhis2designlab/app-skeleton/tree/master/package.json
 [skeleton-html]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/index.html#L38
 [skeleton-manifest]: https://github.com/dhis2designlab/app-skeleton/tree/master/public/manifest.json

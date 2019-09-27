@@ -28,7 +28,7 @@ Dashboard apps (previously referred to as *widgets*) can be added to the DHIS2 d
 [The dashboard app skeleton repository][skeleton] may be used as a foundation to create DHIS2 dashboard apps.
 
 ### Building
-After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. You may also want to add the file name to [.gitignore][skeleton-gitignore]. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
+After a successful `yarn build`, manifest.webapp is generated based on values in package.json. The *build* directory is then zipped as *app-name.zip*. You can change the file name in "postbuild" inside "scripts" in package.json. This zip file can then be installed in a DHIS2 instance using the *App Management* app.
 
 ### package.json
 The following keys should be changed in [package.json][skeleton-package]:
@@ -58,7 +58,6 @@ It might be necessary to change `developmentServer` in [src/index.js][skeleton-j
 [design-system]: https://github.com/dhis2/design-system
 [d2-manifest]: https://www.npmjs.com/package/d2-manifest
 [skeleton]: https://github.com/dhis2designlab/dashboard-app-skeleton
-[skeleton-gitignore]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/.gitignore#L25
 [skeleton-package]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/package.json
 [skeleton-js]: https://github.com/dhis2designlab/dashboard-app-skeleton/tree/master/src/index.js#L15
 [example]: https://github.com/dhis2designlab/dashboard-app-example
