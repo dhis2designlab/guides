@@ -42,24 +42,6 @@ npx @dhis2/cli-app-scripts init my-app-name
 The above command will create a new folder called *my-app-name* and contain
 the code for a minimal DHIS2 app.
 
-### DHIS2 instance
-By default, the app-platform assumes that you're running a local DHIS2 instance on `localhost:8000`. If you want to define some other url to the instance you can do so with environment variables. A good approach is to add a `.env.development` in your root directory.
-
-```
-DHIS2_BASE_URL=https://debug.dhis2.org/2.32.0
-DHIS2_API_VERSION=32
-```
-
-Alternatively you could add them to the `start` script in `package.json`.
-```json
-{
-    "scripts": {
-        "start": "DHIS2_BASE_URL=https://debug.dhis2.org/2.32.0 DHIS2_API_VERSION=32 d2-app-scripts start"
-    }
-}
-```
-
-
 ## Skeleton
 [The app skeleton repository][skeleton] may be used as a foundation to create DHIS2 web apps. It's recommended to avoiding using this, unless you are having issues with the [DHIS2 Application Platform][app-platform].
 
